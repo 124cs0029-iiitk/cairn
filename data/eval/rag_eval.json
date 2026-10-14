@@ -1,0 +1,1442 @@
+{
+ "summary": {
+  "counts": {
+   "grounded": 30,
+   "off_material": 12,
+   "answered": 30,
+   "judge_errors": 0
+  },
+  "retrieval": {
+   "n": 30,
+   "recall_at_1": 0.5666666666666667,
+   "recall_at_3": 0.9333333333333333,
+   "recall_at_6": 0.9666666666666667,
+   "mrr": 0.7388888888888889,
+   "context_precision": 0.813212962962963,
+   "context_recall": 0.95
+  },
+  "retrieval_by_source_type": {
+   "pdf": {
+    "n": 10,
+    "recall_at_1": 0.6,
+    "recall_at_3": 1.0,
+    "recall_at_6": 1.0,
+    "mrr": 0.7833333333333333,
+    "context_precision": 0.81375,
+    "context_recall": 0.95
+   },
+   "slides": {
+    "n": 10,
+    "recall_at_1": 0.6,
+    "recall_at_3": 0.8,
+    "recall_at_6": 0.9,
+    "mrr": 0.7166666666666667,
+    "context_precision": 0.8710000000000001,
+    "context_recall": 1.0
+   },
+   "video": {
+    "n": 10,
+    "recall_at_1": 0.5,
+    "recall_at_3": 1.0,
+    "recall_at_6": 1.0,
+    "mrr": 0.7166666666666667,
+    "context_precision": 0.7548888888888888,
+    "context_recall": 0.9
+   }
+  },
+  "generation": {
+   "faithfulness": 0.9266666666666666,
+   "answer_relevancy": 0.9666666666666667
+  },
+  "citations": {
+   "gold_source_cited": 0.9333333333333333,
+   "cited_sources_relevant": 0.888888888888889
+  },
+  "refusal": {
+   "correct_refusal_rate_off_material": 1.0,
+   "false_refusal_rate_grounded": 0.0,
+   "refused_by_score_gate": 9,
+   "refused_by_model_check": 3
+  }
+ },
+ "rows": [
+  {
+   "id": "g1",
+   "kind": "grounded",
+   "question": "In which parts of an SQL SELECT statement can a subquery be used?",
+   "covered": true,
+   "top_score": 0.831,
+   "answer": "A subquery can be placed in any of the three main clauses of a SELECT statement:\n- **SELECT clause** – as a scalar subquery that returns a single value for each row[1][3].\n- **FROM clause** – as a derived table (sub‑query used as a relation)[1][2].\n- **WHERE clause** – as part of a predicate, e.g., `B <operation> (subquery)`[1].",
+   "outside": "",
+   "retrieved": [
+    "slides_ch3:p35:0",
+    "slides_ch3:p49:0",
+    "slides_ch3:p52:0",
+    "textbook:p114:0",
+    "textbook:p115:1",
+    "video_fsDBUDKC_iM:t64"
+   ],
+   "cited": [
+    "slides_ch3:p35:0",
+    "slides_ch3:p49:0",
+    "slides_ch3:p52:0"
+   ],
+   "gold": "slides_ch3:p35:0",
+   "modality": "slides",
+   "gold_rank": 1,
+   "relevant_flags": [
+    1,
+    1,
+    1,
+    0,
+    0,
+    1
+   ],
+   "context_precision": 0.9166666666666666,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g2",
+   "kind": "grounded",
+   "question": "How can you list the departments whose total salary is greater than the average total salary of all departments using a WITH clause?",
+   "covered": true,
+   "top_score": 0.89,
+   "answer": "sql\nWITH dept_total (dept_name, total) AS (\n    SELECT dept_name, SUM(salary)\n    FROM instructor\n    GROUP BY dept_name\n),\ndept_total_avg (avg_total) AS (\n    SELECT AVG(total)\n    FROM dept_total\n)\nSELECT dept_name\nFROM dept_total, dept_total_avg\nWHERE dept_total.total > dept_total_avg.avg_total;\n\nThis query first computes each department’s total salary (`dept_total`), then computes the average of those totals (`dept_total_avg`), and finally selects the departments whose total exceeds that average. [1]",
+   "outside": "",
+   "retrieved": [
+    "slides_ch3:p51:0",
+    "slides_ch3:p34:0",
+    "video_ywUn5qNmxNo:t1791",
+    "slides_ch3:p49:0",
+    "video_fsDBUDKC_iM:t836",
+    "slides_ch3:p42:0"
+   ],
+   "cited": [
+    "slides_ch3:p51:0"
+   ],
+   "gold": "slides_ch3:p51:0",
+   "modality": "slides",
+   "gold_rank": 1,
+   "relevant_flags": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "context_precision": 1.0,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g3",
+   "kind": "grounded",
+   "question": "What does the Cartesian-product operation produce when applied to the instructor and teaches relations?",
+   "covered": true,
+   "top_score": 0.872,
+   "answer": "The Cartesian‑product of **instructor** and **teaches** creates a new relation that contains **every possible pair of tuples** – one from *instructor* and one from *teaches*. The result includes **all attributes** of both relations, with common attribute names qualified by their relation (e.g., `instructor.ID`, `teaches.ID`)[1][2].",
+   "outside": "",
+   "retrieved": [
+    "slides_ch2:p16:0",
+    "slides_ch3:p18:0",
+    "slides_ch2:p19:0",
+    "video_w1XdPholzWY:t1656",
+    "video_UodHyVywy5c:t1011",
+    "video_ywUn5qNmxNo:t140"
+   ],
+   "cited": [
+    "slides_ch2:p16:0",
+    "slides_ch3:p18:0"
+   ],
+   "gold": "slides_ch2:p16:0",
+   "modality": "slides",
+   "gold_rank": 1,
+   "relevant_flags": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    0
+   ],
+   "context_precision": 0.9166666666666666,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g4",
+   "kind": "grounded",
+   "question": "What are the three parallel database architectures mentioned?",
+   "covered": true,
+   "top_score": 0.804,
+   "answer": "The three parallel‑database architectures are **many‑core shared memory**, **shared‑disk**, and **shared‑nothing** architectures[1].",
+   "outside": "",
+   "retrieved": [
+    "slides_ch1:p24:0",
+    "slides_ch1:p26:0",
+    "video_rrG7azSlyWI:t1677",
+    "video_OWX4RvijwLw:t357",
+    "video_rrG7azSlyWI:t1747",
+    "slides_ch1:p25:0"
+   ],
+   "cited": [
+    "slides_ch1:p24:0"
+   ],
+   "gold": "slides_ch1:p24:0",
+   "modality": "slides",
+   "gold_rank": 1,
+   "relevant_flags": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "context_precision": 1.0,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g5",
+   "kind": "grounded",
+   "question": "How can the functional dependency A → H be derived from the given set of functional dependencies?",
+   "covered": true,
+   "top_score": 0.776,
+   "answer": "By applying the **transitivity** rule of Armstrong’s axioms: since the given dependencies include **A → B** and **B → H**, we can infer **A → H** (A determines B and B determines H, therefore A determines H)[1].",
+   "outside": "",
+   "retrieved": [
+    "video_9-uqoJK6KPc:t1082",
+    "video_vdd-fDCypTc:t258",
+    "video_9-uqoJK6KPc:t1163",
+    "slides_ch7:p38:0",
+    "slides_ch7:p75:0",
+    "video_9-uqoJK6KPc:t1422"
+   ],
+   "cited": [
+    "video_9-uqoJK6KPc:t1082"
+   ],
+   "gold": "slides_ch7:p36:0",
+   "modality": "slides",
+   "gold_rank": null,
+   "relevant_flags": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "context_precision": 1.0,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": false,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g6",
+   "kind": "grounded",
+   "question": "In a 3NF decomposition, where is a candidate key guaranteed to appear?",
+   "covered": true,
+   "top_score": 0.836,
+   "answer": "In any 3NF decomposition, at least one of the resulting relations must contain a candidate key of the original schema. The algorithm ensures that a relation holding a candidate key is added if none of the other schemas already includes one [2][4].",
+   "outside": "",
+   "retrieved": [
+    "slides_ch7:p91:0",
+    "slides_ch7:p88:0",
+    "slides_ch7:p62:0",
+    "slides_ch7:p63:0",
+    "video_9-uqoJK6KPc:t593",
+    "slides_ch7:p26:0"
+   ],
+   "cited": [
+    "slides_ch7:p88:0",
+    "slides_ch7:p63:0"
+   ],
+   "gold": "slides_ch7:p88:0",
+   "modality": "slides",
+   "gold_rank": 2,
+   "relevant_flags": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "context_precision": 0.5,
+   "context_recall": 1.0,
+   "citation_precision": 0.5,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g7",
+   "kind": "grounded",
+   "question": "What does the restriction of a set of functional dependencies F to a relation schema Ri consist of?",
+   "covered": true,
+   "top_score": 0.893,
+   "answer": "The restriction of F to a relation schema Ri is the set Fi containing every functional dependency that appears in the closure F⁺ and whose left‑ and right‑hand side attributes are all members of Ri. In other words, Fi collects all dependencies from F⁺ that involve only attributes of Ri, allowing them to be checked using just that relation. [1]",
+   "outside": "",
+   "retrieved": [
+    "slides_ch7:p52:0",
+    "slides_ch7:p77:0",
+    "slides_ch7:p14:0",
+    "video_K5jqNjnE-pE:t1577",
+    "video_K5jqNjnE-pE:t1857",
+    "video_vdd-fDCypTc:t1515"
+   ],
+   "cited": [
+    "slides_ch7:p52:0"
+   ],
+   "gold": "slides_ch7:p52:0",
+   "modality": "slides",
+   "gold_rank": 1,
+   "relevant_flags": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "context_precision": 0.6666666666666666,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g8",
+   "kind": "grounded",
+   "question": "What is the domain of an attribute?",
+   "covered": true,
+   "top_score": 0.809,
+   "answer": "The **domain** of an attribute is the set of all permissible values that the attribute can take. It defines the collection of allowed values (e.g., dates, strings, numbers) for that attribute, and the special value **null** is considered a member of every domain. Each attribute in a relational schema is associated with its own domain. [1][2][3]",
+   "outside": "",
+   "retrieved": [
+    "slides_ch2:p4:0",
+    "video_DRSog3SA4-Y:t526",
+    "video_DRSog3SA4-Y:t231",
+    "video_DRSog3SA4-Y:t151",
+    "slides_ch6:p17:0",
+    "video_iHrvzgQxybY:t1560"
+   ],
+   "cited": [
+    "slides_ch2:p4:0",
+    "video_DRSog3SA4-Y:t526",
+    "video_DRSog3SA4-Y:t231"
+   ],
+   "gold": "slides_ch2:p4:0",
+   "modality": "slides",
+   "gold_rank": 1,
+   "relevant_flags": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    0
+   ],
+   "context_precision": 1.0,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g9",
+   "kind": "grounded",
+   "question": "Why is the decomposition of employee(ID, name, street, city, salary) into employee1(ID, name) and employee2(name, street, city, salary) considered lossy?",
+   "covered": true,
+   "top_score": 0.834,
+   "answer": "The decomposition is lossy because the attribute **name** is not a key. When two different employees share the same name, the join of *employee1* (ID, name) and *employee2* (name, street, city, salary) cannot uniquely reconstruct the original tuples – you cannot tell which street, city, and salary belong to which ID. Hence the original relation cannot be recovered losslessly [2].",
+   "outside": "",
+   "retrieved": [
+    "video_K5jqNjnE-pE:t671",
+    "slides_ch7:p4:0",
+    "video_pm_Tr3eZAac:t1415",
+    "video_LMAELfNAGF4:t884",
+    "video_pm_Tr3eZAac:t737",
+    "video_EnTIVJi4bW4:t1564"
+   ],
+   "cited": [
+    "slides_ch7:p4:0"
+   ],
+   "gold": "slides_ch7:p4:0",
+   "modality": "slides",
+   "gold_rank": 2,
+   "relevant_flags": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "context_precision": 1.0,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g10",
+   "kind": "grounded",
+   "question": "How is the closure of a set of functional dependencies F computed?",
+   "covered": true,
+   "top_score": 0.873,
+   "answer": "To compute the closure **F⁺** of a set of functional dependencies **F**, start with **F⁺ = F** and repeatedly apply Armstrong’s axioms until no new dependencies appear:\n1. **Reflexivity** – if β ⊆ α then α → β.\n2. **Augmentation** – if α → β then γα → γβ.\n3. **Transitivity** – if α → β and β → γ then α → γ.\nFor each FD in the current **F⁺**, apply reflexivity and augmentation and add the results; then combine pairs of FDs using transitivity and add those results. Continue the loop until **F⁺** stops changing. This yields all functional dependencies logically implied by **F**. [2][4][6]",
+   "outside": "",
+   "retrieved": [
+    "video_9-uqoJK6KPc:t1422",
+    "slides_ch7:p35:0",
+    "slides_ch7:p12:0",
+    "video_9-uqoJK6KPc:t1163",
+    "slides_ch7:p34:0",
+    "slides_ch7:p38:0"
+   ],
+   "cited": [
+    "slides_ch7:p35:0",
+    "video_9-uqoJK6KPc:t1163",
+    "slides_ch7:p38:0"
+   ],
+   "gold": "slides_ch7:p38:0",
+   "modality": "slides",
+   "gold_rank": 6,
+   "relevant_flags": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "context_precision": 0.7100000000000001,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g11",
+   "kind": "grounded",
+   "question": "What is a file-based system and how does it manage data?",
+   "covered": true,
+   "top_score": 0.796,
+   "answer": "A file‑based system stores an organization’s information in permanent files on disk. Each application program is written to directly read, write, or update those files, and new programs are added as needs arise[1]. The data layout is hard‑coded in the programs, so any change to a file’s structure requires modifying every program that uses it[4]. Concurrency is handled by the applications themselves, typically by locking a file when it is opened, which prevents other users from accessing the same file simultaneously[2].",
+   "outside": "",
+   "retrieved": [
+    "textbook:p10:0",
+    "textbook:p11:1",
+    "textbook:p10:1",
+    "textbook:p19:0",
+    "video_rrG7azSlyWI:t593",
+    "video_rrG7azSlyWI:t1597"
+   ],
+   "cited": [
+    "textbook:p10:0",
+    "textbook:p11:1",
+    "textbook:p19:0"
+   ],
+   "gold": "textbook:p10:0",
+   "modality": "pdf",
+   "gold_rank": 1,
+   "relevant_flags": [
+    1,
+    1,
+    1,
+    1,
+    0,
+    0
+   ],
+   "context_precision": 1.0,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g12",
+   "kind": "grounded",
+   "question": "What language is used to specify the logical schema at the end of the design stage?",
+   "covered": true,
+   "top_score": 0.78,
+   "answer": "The logical schema is specified using **SQL Data Definition Language (DDL) statements** at the end of the design stage [2].",
+   "outside": "",
+   "retrieved": [
+    "textbook:p95:0",
+    "textbook:p96:1",
+    "video_cx7rBTS2dBM:t219",
+    "video_OWX4RvijwLw:t357",
+    "video_OWX4RvijwLw:t739",
+    "textbook:p97:0"
+   ],
+   "cited": [
+    "textbook:p96:1"
+   ],
+   "gold": "textbook:p96:1",
+   "modality": "pdf",
+   "gold_rank": 2,
+   "relevant_flags": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "context_precision": 0.41666666666666663,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g13",
+   "kind": "grounded",
+   "question": "What type of relationship is described as the norm in relational database design, exemplified by one department having many employees?",
+   "covered": true,
+   "top_score": 0.814,
+   "answer": "The norm in relational database design is a **one‑to‑many (1:M) relationship**, such as one department having many employees. [1]",
+   "outside": "",
+   "retrieved": [
+    "textbook:p49:1",
+    "textbook:p50:0",
+    "textbook:p50:1",
+    "slides_ch6:p5:0",
+    "video_cx7rBTS2dBM:t73",
+    "textbook:p95:0"
+   ],
+   "cited": [
+    "textbook:p49:1"
+   ],
+   "gold": "textbook:p49:1",
+   "modality": "pdf",
+   "gold_rank": 1,
+   "relevant_flags": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "context_precision": 1.0,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g14",
+   "kind": "grounded",
+   "question": "Can a UNIQUE constraint be applied to columns that allow NULL values, and if so, how many NULL rows are permitted?",
+   "covered": true,
+   "top_score": 0.813,
+   "answer": "Yes. A UNIQUE constraint can be defined on columns that allow NULLs, but only a single row may contain a NULL value in that column [1].",
+   "outside": "",
+   "retrieved": [
+    "textbook:p107:0",
+    "textbook:p106:0",
+    "textbook:p104:1",
+    "textbook:p121:1",
+    "textbook:p146:0",
+    "textbook:p108:0"
+   ],
+   "cited": [
+    "textbook:p107:0"
+   ],
+   "gold": "textbook:p107:0",
+   "modality": "pdf",
+   "gold_rank": 1,
+   "relevant_flags": [
+    1,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "context_precision": 0.8333333333333333,
+   "context_recall": 0.5,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 0.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g15",
+   "kind": "grounded",
+   "question": "Which DBMS feature guarantees that data stays consistent and valid when several users update the same information during transaction processing?",
+   "covered": true,
+   "top_score": 0.798,
+   "answer": "The DBMS’s **concurrency‑control subsystem** (or concurrency‑control manager) ensures that data stays consistent and valid when multiple users update the same information during transaction processing[2][5].",
+   "outside": "",
+   "retrieved": [
+    "video_rrG7azSlyWI:t1106",
+    "textbook:p20:1",
+    "textbook:p13:0",
+    "video_rrG7azSlyWI:t1213",
+    "slides_ch1:p23:0",
+    "textbook:p11:0"
+   ],
+   "cited": [
+    "textbook:p20:1",
+    "slides_ch1:p23:0"
+   ],
+   "gold": "textbook:p20:1",
+   "modality": "pdf",
+   "gold_rank": 2,
+   "relevant_flags": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    0
+   ],
+   "context_precision": 0.8875,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g16",
+   "kind": "grounded",
+   "question": "According to the decomposition rule, what is implied when X determines both Y and Z?",
+   "covered": true,
+   "top_score": 0.751,
+   "answer": "The decomposition rule states that if a functional dependency X → Y Z holds, then it can be broken down into two separate dependencies: X → Y **and** X → Z. In other words, X determines Y and X determines Z individually [1][6].",
+   "outside": "",
+   "retrieved": [
+    "textbook:p80:0",
+    "textbook:p79:1",
+    "video_qz0bimEpdQo:t674",
+    "video_iHrvzgQxybY:t884",
+    "textbook:p78:0",
+    "video_9-uqoJK6KPc:t1293"
+   ],
+   "cited": [
+    "textbook:p80:0",
+    "video_9-uqoJK6KPc:t1293"
+   ],
+   "gold": "textbook:p80:0",
+   "modality": "pdf",
+   "gold_rank": 1,
+   "relevant_flags": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "context_precision": 0.6666666666666666,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g17",
+   "kind": "grounded",
+   "question": "What abbreviation represents the day of the year and what range of values can it have?",
+   "covered": true,
+   "top_score": 0.688,
+   "answer": "The abbreviation for **day of the year** is `dy`, and it can take values from **1 to 366**. [1]",
+   "outside": "",
+   "retrieved": [
+    "textbook:p129:0",
+    "textbook:p128:0",
+    "textbook:p38:1",
+    "video_DRSog3SA4-Y:t231",
+    "video_cx7rBTS2dBM:t1082",
+    "textbook:p38:0"
+   ],
+   "cited": [
+    "textbook:p129:0"
+   ],
+   "gold": "textbook:p129:0",
+   "modality": "pdf",
+   "gold_rank": 1,
+   "relevant_flags": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "context_precision": 1.0,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g18",
+   "kind": "grounded",
+   "question": "Who contributed the section on normalization?",
+   "covered": true,
+   "top_score": 0.746,
+   "answer": "Dr. Gordon Russell contributed the section on normalization[3].",
+   "outside": "",
+   "retrieved": [
+    "slides_ch7:p1:0",
+    "textbook:p82:0",
+    "textbook:p9:0",
+    "textbook:p90:1",
+    "textbook:p85:1",
+    "textbook:p84:1"
+   ],
+   "cited": [
+    "textbook:p9:0"
+   ],
+   "gold": "textbook:p9:0",
+   "modality": "pdf",
+   "gold_rank": 3,
+   "relevant_flags": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "context_precision": 0.3333333333333333,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g19",
+   "kind": "grounded",
+   "question": "What do concurrency control strategies ensure in multiuser database systems?",
+   "covered": true,
+   "top_score": 0.865,
+   "answer": "Concurrency control strategies ensure that data accessed by multiple users remains correct, consistent, and maintains integrity, even when several users update the same information simultaneously[1][4]",
+   "outside": "",
+   "retrieved": [
+    "textbook:p19:1",
+    "textbook:p21:0",
+    "textbook:p11:1",
+    "textbook:p20:1",
+    "slides_ch1:p23:0",
+    "video_rrG7azSlyWI:t1213"
+   ],
+   "cited": [
+    "textbook:p19:1",
+    "textbook:p20:1"
+   ],
+   "gold": "textbook:p19:1",
+   "modality": "pdf",
+   "gold_rank": 1,
+   "relevant_flags": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "context_precision": 1.0,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g20",
+   "kind": "grounded",
+   "question": "What WHERE clause would you use to select only publishers that are located in Vancouver?",
+   "covered": true,
+   "top_score": 0.714,
+   "answer": "sql\nWHERE city = 'Vancouver'",
+   "outside": "",
+   "retrieved": [
+    "textbook:p115:0",
+    "textbook:p115:1",
+    "textbook:p131:0",
+    "textbook:p124:0",
+    "textbook:p116:0",
+    "textbook:p122:0"
+   ],
+   "cited": [
+    "textbook:p115:1"
+   ],
+   "gold": "textbook:p115:1",
+   "modality": "pdf",
+   "gold_rank": 2,
+   "relevant_flags": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "context_precision": 1.0,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g21",
+   "kind": "grounded",
+   "question": "What is the core mathematical formulation that dictates relational database design?",
+   "covered": true,
+   "top_score": 0.806,
+   "answer": "The fundamental mathematical formulation that drives relational database design is **functional dependencies** – the set of attribute relationships that determine how data should be organized and normalized [2].",
+   "outside": "",
+   "retrieved": [
+    "video_EnTIVJi4bW4:t22",
+    "video_K5jqNjnE-pE:t1169",
+    "textbook:p95:0",
+    "video_qz0bimEpdQo:t10",
+    "video_9-uqoJK6KPc:t12",
+    "video_vdd-fDCypTc:t12"
+   ],
+   "cited": [
+    "video_K5jqNjnE-pE:t1169"
+   ],
+   "gold": "video_K5jqNjnE-pE:t1169",
+   "modality": "video",
+   "gold_rank": 2,
+   "relevant_flags": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "context_precision": 1.0,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g22",
+   "kind": "grounded",
+   "question": "What is the first decision to make when designing an E‑R model for objects such as instructor, student, or project?",
+   "covered": true,
+   "top_score": 0.829,
+   "answer": "The initial design choice is to decide **whether the object should be represented as an entity set (or simply as an attribute) rather than as a relationship set**. This decision determines how instructor, student, project, etc., are modeled in the E‑R diagram [1].",
+   "outside": "",
+   "retrieved": [
+    "video_LMAELfNAGF4:t1926",
+    "video_pm_Tr3eZAac:t68",
+    "video_pm_Tr3eZAac:t1091",
+    "video_LMAELfNAGF4:t126",
+    "video_cx7rBTS2dBM:t296",
+    "video_LMAELfNAGF4:t12"
+   ],
+   "cited": [
+    "video_LMAELfNAGF4:t1926"
+   ],
+   "gold": "video_LMAELfNAGF4:t1926",
+   "modality": "video",
+   "gold_rank": 1,
+   "relevant_flags": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "context_precision": 1.0,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g23",
+   "kind": "grounded",
+   "question": "What topics are covered in module 3 of the Database Management Systems course?",
+   "covered": true,
+   "top_score": 0.845,
+   "answer": "Module 3 delves into the internal side of DBMSs: it introduces the major components of the database engine, the basic architecture of a DBMS, its internal components, and gives a brief historical perspective. It also covers the various DBMS models and the overall internals and architecture of the system[1][4].",
+   "outside": "",
+   "retrieved": [
+    "video_rrG7azSlyWI:t10",
+    "video_OWX4RvijwLw:t10",
+    "video_w1XdPholzWY:t10",
+    "video_rrG7azSlyWI:t1888",
+    "video_K5jqNjnE-pE:t12",
+    "video_iHrvzgQxybY:t10"
+   ],
+   "cited": [
+    "video_rrG7azSlyWI:t10",
+    "video_rrG7azSlyWI:t1888"
+   ],
+   "gold": "video_rrG7azSlyWI:t10",
+   "modality": "video",
+   "gold_rank": 1,
+   "relevant_flags": [
+    1,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "context_precision": 0.75,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g24",
+   "kind": "grounded",
+   "question": "What does the complementation rule for multivalued dependencies state?",
+   "covered": true,
+   "top_score": 0.817,
+   "answer": "The complementation rule says that if a multivalued dependency **X →→ Y** holds in a relation schema **R**, then **X** also multi‑determines the complementary set of attributes, i.e., **X →→ (R – X – Y)** (the attributes of R that are not in X or Y) [2].",
+   "outside": "",
+   "retrieved": [
+    "slides_ch7:p75:0",
+    "video_qz0bimEpdQo:t725",
+    "video_qz0bimEpdQo:t803",
+    "slides_ch7:p74:0",
+    "video_qz0bimEpdQo:t941",
+    "slides_ch7:p77:0"
+   ],
+   "cited": [
+    "video_qz0bimEpdQo:t725"
+   ],
+   "gold": "video_qz0bimEpdQo:t725",
+   "modality": "video",
+   "gold_rank": 2,
+   "relevant_flags": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "context_precision": 0.0,
+   "context_recall": 0.0,
+   "citation_precision": 0.0,
+   "citation_hit": true,
+   "faithfulness": 0.0,
+   "answer_relevancy": 0.0
+  },
+  {
+   "id": "g25",
+   "kind": "grounded",
+   "question": "What will be covered in the current module on the entity-relationship model?",
+   "covered": true,
+   "top_score": 0.8,
+   "answer": "The current module will first illustrate the Entity‑Relationship diagram notation – the graphical symbols for the ER model – and then show how ER models can be translated into relational schemas, a basic step of logical design. [1]",
+   "outside": "",
+   "retrieved": [
+    "video_pm_Tr3eZAac:t16",
+    "video_K5jqNjnE-pE:t58",
+    "video_LMAELfNAGF4:t12",
+    "video_DRSog3SA4-Y:t10",
+    "video_cx7rBTS2dBM:t10",
+    "video_cx7rBTS2dBM:t1733"
+   ],
+   "cited": [
+    "video_pm_Tr3eZAac:t16"
+   ],
+   "gold": "video_LMAELfNAGF4:t12",
+   "modality": "video",
+   "gold_rank": 3,
+   "relevant_flags": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "context_precision": 0.3333333333333333,
+   "context_recall": 1.0,
+   "citation_precision": 0.0,
+   "citation_hit": false,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g26",
+   "kind": "grounded",
+   "question": "What concepts related to functional dependencies were covered in this module?",
+   "covered": true,
+   "top_score": 0.738,
+   "answer": "The module covered several functional‑dependency concepts: the **closure of functional dependencies** (F⁺) and **attribute closure** used in design algorithms[1][5]; an **extended theory of functional dependencies** and practical **algorithms** that operate on them[1]; **decomposition** of schemas based on functional dependencies, including **loss‑less‑join decomposition** and **dependency preservation**[3][4]; foundational **normal forms** such as **First Normal Form**, **Third Normal Form**, and **BCNF**, and the role of **atomic domains**[2][4][5]; and the overall goal of achieving a **good relational design** with minimal **redundancy**[6].",
+   "outside": "",
+   "retrieved": [
+    "video_9-uqoJK6KPc:t1833",
+    "video_9-uqoJK6KPc:t12",
+    "video_vdd-fDCypTc:t12",
+    "video_EnTIVJi4bW4:t22",
+    "video_K5jqNjnE-pE:t1857",
+    "textbook:p70:0"
+   ],
+   "cited": [
+    "video_9-uqoJK6KPc:t1833",
+    "video_9-uqoJK6KPc:t12",
+    "video_vdd-fDCypTc:t12",
+    "video_EnTIVJi4bW4:t22",
+    "video_K5jqNjnE-pE:t1857",
+    "textbook:p70:0"
+   ],
+   "gold": "video_9-uqoJK6KPc:t1833",
+   "modality": "video",
+   "gold_rank": 1,
+   "relevant_flags": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "context_precision": 1.0,
+   "context_recall": 1.0,
+   "citation_precision": 0.16666666666666666,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g27",
+   "kind": "grounded",
+   "question": "What are the three types of formal relational query languages?",
+   "covered": true,
+   "top_score": 0.823,
+   "answer": "The three formal relational query languages are **relational algebra**, **tuple relational calculus**, and **domain relational calculus**[1][3].",
+   "outside": "",
+   "retrieved": [
+    "video_iHrvzgQxybY:t63",
+    "video_iHrvzgQxybY:t10",
+    "slides_ch2:p9:0",
+    "video_DRSog3SA4-Y:t1958",
+    "video_OWX4RvijwLw:t1460",
+    "slides_ch2:p2:0"
+   ],
+   "cited": [
+    "video_iHrvzgQxybY:t63",
+    "slides_ch2:p9:0"
+   ],
+   "gold": "video_iHrvzgQxybY:t63",
+   "modality": "video",
+   "gold_rank": 1,
+   "relevant_flags": [
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "context_precision": 0.7555555555555555,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g28",
+   "kind": "grounded",
+   "question": "Why is normalization performed on a relational schema after an initial design based on an E‑R diagram?",
+   "covered": true,
+   "top_score": 0.838,
+   "answer": "Normalization is applied after converting an E‑R diagram to a relational schema to refine the design by eliminating redundancy and the anomalies (update, insert, delete) that can arise in the initial tables. Even a well‑designed ER model may leave functional dependencies among non‑key attributes, so normalization restructures the schema into smaller, well‑behaved relations, improving correctness, ease of manipulation, and performance[3][5][6].",
+   "outside": "",
+   "retrieved": [
+    "video_pm_Tr3eZAac:t1091",
+    "slides_ch7:p81:0",
+    "video_EnTIVJi4bW4:t76",
+    "textbook:p82:0",
+    "slides_ch7:p82:0",
+    "video_cx7rBTS2dBM:t395"
+   ],
+   "cited": [
+    "video_EnTIVJi4bW4:t76",
+    "slides_ch7:p82:0",
+    "video_cx7rBTS2dBM:t395"
+   ],
+   "gold": "video_EnTIVJi4bW4:t76",
+   "modality": "video",
+   "gold_rank": 3,
+   "relevant_flags": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "context_precision": 0.7100000000000001,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g29",
+   "kind": "grounded",
+   "question": "Which modules introduce SQL at a first level?",
+   "covered": true,
+   "top_score": 0.81,
+   "answer": "Modules 6, 7, and 8 introduce SQL at a first level[1].",
+   "outside": "",
+   "retrieved": [
+    "video_w1XdPholzWY:t10",
+    "video_w1XdPholzWY:t88",
+    "video_iHrvzgQxybY:t10",
+    "video_OWX4RvijwLw:t10",
+    "video_K5jqNjnE-pE:t12",
+    "video_9-uqoJK6KPc:t12"
+   ],
+   "cited": [
+    "video_w1XdPholzWY:t10"
+   ],
+   "gold": "video_w1XdPholzWY:t10",
+   "modality": "video",
+   "gold_rank": 1,
+   "relevant_flags": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "context_precision": 1.0,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 1.0,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "g30",
+   "kind": "grounded",
+   "question": "What is a compound key in a relational schema?",
+   "covered": true,
+   "top_score": 0.841,
+   "answer": "A **compound key** (also called a composite key) is a key that consists of two or more attributes together to uniquely identify a tuple in a relation. Each component attribute may be a simple key in its own right in another table, and they are combined in the given table to form the compound key (e.g., roll number + course number in an enrolment table) [1][2].",
+   "outside": "",
+   "retrieved": [
+    "video_DRSog3SA4-Y:t1607",
+    "video_DRSog3SA4-Y:t1528",
+    "video_9-uqoJK6KPc:t306",
+    "video_9-uqoJK6KPc:t136",
+    "slides_ch6:p60:0",
+    "video_DRSog3SA4-Y:t10"
+   ],
+   "cited": [
+    "video_DRSog3SA4-Y:t1607",
+    "video_DRSog3SA4-Y:t1528"
+   ],
+   "gold": "video_DRSog3SA4-Y:t1528",
+   "modality": "video",
+   "gold_rank": 2,
+   "relevant_flags": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "context_precision": 1.0,
+   "context_recall": 1.0,
+   "citation_precision": 1.0,
+   "citation_hit": true,
+   "faithfulness": 0.8,
+   "answer_relevancy": 1.0
+  },
+  {
+   "id": "o1",
+   "kind": "off_material",
+   "question": "Who won the cricket world cup in 2011?",
+   "covered": false,
+   "top_score": 0.411,
+   "answer": "",
+   "outside": "India won the 2011 ICC Cricket World Cup, defeating Sri Lanka in the final.",
+   "retrieved": [
+    "textbook:p148:0",
+    "textbook:p9:0",
+    "textbook:p152:0",
+    "textbook:p115:0",
+    "textbook:p9:1",
+    "textbook:p15:1"
+   ],
+   "cited": [],
+   "gold": null,
+   "modality": null
+  },
+  {
+   "id": "o2",
+   "kind": "off_material",
+   "question": "What is the capital of France?",
+   "covered": false,
+   "top_score": 0.479,
+   "answer": "",
+   "outside": "Paris is the capital city of France.",
+   "retrieved": [
+    "slides_ch7:p59:0",
+    "video_cx7rBTS2dBM:t656",
+    "slides_ch7:p21:0",
+    "video_rrG7azSlyWI:t472",
+    "slides_ch7:p20:0",
+    "video_K5jqNjnE-pE:t1577"
+   ],
+   "cited": [],
+   "gold": null,
+   "modality": null
+  },
+  {
+   "id": "o3",
+   "kind": "off_material",
+   "question": "How do I train a neural network?",
+   "covered": false,
+   "top_score": 0.646,
+   "answer": "",
+   "outside": "To train a neural network, gather labeled data, design the model architecture, select a loss function and optimizer, and then repeatedly feed batches of data through forward and backward passes, updating weights to reduce loss. Use training/validation splits, monitor performance, and tune hyperparameters as needed.",
+   "retrieved": [
+    "slides_ch3:p19:0",
+    "textbook:p23:1",
+    "video_EnTIVJi4bW4:t1637",
+    "slides_ch1:p3:0",
+    "video_w1XdPholzWY:t1591",
+    "slides_ch1:p6:0"
+   ],
+   "cited": [],
+   "gold": null,
+   "modality": null
+  },
+  {
+   "id": "o4",
+   "kind": "off_material",
+   "question": "Explain quantum entanglement.",
+   "covered": false,
+   "top_score": 0.546,
+   "answer": "",
+   "outside": "Quantum entanglement is a phenomenon where two or more particles become linked so that the state of one instantly determines the state of the other(s), no matter the distance between them. Measuring a property (like spin) of one particle instantly fixes the corresponding property of its partner, as if they share a single, inseparable quantum state. This non‑local correlation defies classical intuition but is confirmed by many experiments.",
+   "retrieved": [
+    "textbook:p78:0",
+    "video_iHrvzgQxybY:t1960",
+    "textbook:p55:0",
+    "video_iHrvzgQxybY:t1363",
+    "textbook:p83:0",
+    "video_iHrvzgQxybY:t1061"
+   ],
+   "cited": [],
+   "gold": null,
+   "modality": null
+  },
+  {
+   "id": "o5",
+   "kind": "off_material",
+   "question": "How do I bake sourdough bread?",
+   "covered": false,
+   "top_score": 0.512,
+   "answer": "",
+   "outside": "Mix 100 g starter with 350 g water; let hydrate 30 min. Add 500 g flour and 10 g salt, knead until smooth. Autolyse 30 min, then fold every 30 min for 2 hours (bulk fermentation). Shape dough, place in a floured proofing basket, refrigerate 12–18 h. Preheat a Dutch oven to 250 °C, score loaf, bake 20 min covered, then 20 min uncovered until crust is deep brown. Cool 1 h before slicing.",
+   "retrieved": [
+    "textbook:p133:1",
+    "video_EnTIVJi4bW4:t1637",
+    "textbook:p133:0",
+    "video_EnTIVJi4bW4:t1767",
+    "slides_ch7:p58:0",
+    "video_EnTIVJi4bW4:t1689"
+   ],
+   "cited": [],
+   "gold": null,
+   "modality": null
+  },
+  {
+   "id": "o6",
+   "kind": "off_material",
+   "question": "What is gradient descent?",
+   "covered": false,
+   "top_score": 0.601,
+   "answer": "",
+   "outside": "Gradient descent is an optimization algorithm that iteratively adjusts parameters by moving opposite to the gradient of a loss function, seeking a local minimum. Starting from an initial guess, each step subtracts a learning‑rate‑scaled gradient until the changes become sufficiently small.",
+   "retrieved": [
+    "video_DRSog3SA4-Y:t1886",
+    "video_DRSog3SA4-Y:t1834",
+    "slides_ch6:p54:0",
+    "slides_ch7:p5:0",
+    "video_rrG7azSlyWI:t810",
+    "video_9-uqoJK6KPc:t957"
+   ],
+   "cited": [],
+   "gold": null,
+   "modality": null
+  },
+  {
+   "id": "o7",
+   "kind": "off_material",
+   "question": "How does TCP congestion control work?",
+   "covered": false,
+   "top_score": 0.552,
+   "answer": "",
+   "outside": "TCP uses a congestion window (cwnd) that limits in‑flight data. It starts with slow‑start, doubling cwnd each RTT until loss is detected. Then it enters congestion avoidance, increasing cwnd linearly. Upon packet loss (signaled by timeout or triple duplicate ACKs) cwnd is reduced (usually halved) and slow‑start may restart. Fast retransmit/recovery quickly resend lost packets without a full timeout.",
+   "retrieved": [
+    "slides_ch1:p23:0",
+    "textbook:p19:1",
+    "video_rrG7azSlyWI:t1213",
+    "textbook:p21:0",
+    "textbook:p20:1",
+    "video_iHrvzgQxybY:t63"
+   ],
+   "cited": [],
+   "gold": null,
+   "modality": null
+  },
+  {
+   "id": "o8",
+   "kind": "off_material",
+   "question": "What is a Kubernetes pod?",
+   "covered": false,
+   "top_score": 0.532,
+   "answer": "",
+   "outside": "A Kubernetes pod is the smallest deployable unit in a Kubernetes cluster. It encapsulates one or more tightly‑coupled containers that share the same network namespace, storage volumes, and specifications. Pods run on a node, get a unique IP address, and are managed as a single entity for scheduling, scaling, and lifecycle operations. They enable containers to communicate locally via localhost and share resources efficiently.",
+   "retrieved": [
+    "slides_ch1:p19:0",
+    "textbook:p43:0",
+    "video_rrG7azSlyWI:t593",
+    "video_rrG7azSlyWI:t1597",
+    "slides_ch1:p18:0",
+    "video_DRSog3SA4-Y:t10"
+   ],
+   "cited": [],
+   "gold": null,
+   "modality": null
+  },
+  {
+   "id": "o9",
+   "kind": "off_material",
+   "question": "Tell me about the French revolution.",
+   "covered": false,
+   "top_score": 0.474,
+   "answer": "",
+   "outside": "The French Revolution (1789‑1799) was a radical upheaval that ended the monarchy, abolished feudal privileges, and proclaimed liberty, equality, and fraternity. Triggered by fiscal crises, social inequality, and Enlightenment ideas, it led to the storming of the Bastille, the Reign of Terror, and the rise of Napoleon Bonaparte, reshaping France’s political landscape and influencing revolutions worldwide.",
+   "retrieved": [
+    "video_K5jqNjnE-pE:t523",
+    "textbook:p7:0",
+    "video_OWX4RvijwLw:t357",
+    "video_K5jqNjnE-pE:t463",
+    "video_K5jqNjnE-pE:t12",
+    "video_fsDBUDKC_iM:t1083"
+   ],
+   "cited": [],
+   "gold": null,
+   "modality": null
+  },
+  {
+   "id": "o10",
+   "kind": "off_material",
+   "question": "How do vaccines work?",
+   "covered": false,
+   "top_score": 0.515,
+   "answer": "",
+   "outside": "Vaccines train the immune system by presenting a harmless piece or weakened form of a pathogen (antigen). This prompts the body to produce antibodies and memory cells without causing disease. If the real pathogen later infects, the immune system recognizes it quickly and mounts a strong, rapid response, preventing illness or reducing its severity. This protective “memory” is the basis of vaccination.",
+   "retrieved": [
+    "textbook:p30:1",
+    "video_ywUn5qNmxNo:t435",
+    "video_fsDBUDKC_iM:t403",
+    "video_fsDBUDKC_iM:t64",
+    "slides_ch7:p83:0",
+    "video_9-uqoJK6KPc:t1648"
+   ],
+   "cited": [],
+   "gold": null,
+   "modality": null
+  },
+  {
+   "id": "o11",
+   "kind": "off_material",
+   "question": "What is the speed of light?",
+   "covered": false,
+   "top_score": 0.525,
+   "answer": "",
+   "outside": "The speed of light in a vacuum is about 299,792,458 meters per second (≈ 3.00 × 10⁸ m/s), which is roughly 186,282 miles per second. This constant is fundamental to physics and appears in many equations, such as Einstein’s E = mc².",
+   "retrieved": [
+    "textbook:p104:0",
+    "video_K5jqNjnE-pE:t411",
+    "video_9-uqoJK6KPc:t1369",
+    "video_ywUn5qNmxNo:t515",
+    "video_iHrvzgQxybY:t338",
+    "video_iHrvzgQxybY:t1180"
+   ],
+   "cited": [],
+   "gold": null,
+   "modality": null
+  },
+  {
+   "id": "o12",
+   "kind": "off_material",
+   "question": "Explain how a transformer language model works.",
+   "covered": false,
+   "top_score": 0.638,
+   "answer": "",
+   "outside": "A transformer language model processes text using self‑attention layers that weigh the relevance of each token to every other token, allowing parallel computation of contextual representations. Input tokens are embedded, passed through stacked encoder (or decoder) blocks with multi‑head attention and feed‑forward networks, and trained on large corpora to predict next tokens or fill blanks, capturing long‑range dependencies efficiently.",
+   "retrieved": [
+    "video_cx7rBTS2dBM:t10",
+    "video_OWX4RvijwLw:t1386",
+    "video_UodHyVywy5c:t653",
+    "video_OWX4RvijwLw:t1239",
+    "video_EnTIVJi4bW4:t1433",
+    "slides_ch2:p25:0"
+   ],
+   "cited": [],
+   "gold": null,
+   "modality": null
+  }
+ ],
+ "models": {
+  "answers": "groq/openai/gpt-oss-120b",
+  "judge": "groq/qwen/qwen3.8-27b"
+ },
+ "refusal_threshold": 0.58
+}

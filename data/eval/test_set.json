@@ -1,0 +1,296 @@
+[
+ {
+  "id": "g1",
+  "kind": "grounded",
+  "question": "In which parts of an SQL SELECT statement can a subquery be used?",
+  "gold_chunk_id": "slides_ch3:p35:0",
+  "reference_answer": "A subquery can replace ri in the FROM clause, replace P with an expression of the form B <operation> (subquery) in the WHERE clause, and replace Ai in the SELECT clause with a subquery that generates a single value."
+ },
+ {
+  "id": "g2",
+  "kind": "grounded",
+  "question": "How can you list the departments whose total salary is greater than the average total salary of all departments using a WITH clause?",
+  "gold_chunk_id": "slides_ch3:p51:0",
+  "reference_answer": "Use a WITH clause defining dept_total (dept_name, value) as (select dept_name, sum(salary) from instructor group by dept_name) and dept_total_avg(value) as (select avg(value) from dept_total), then select dept_name from dept_total, dept_total_avg where dept_total.value > dept_total_avg.value."
+ },
+ {
+  "id": "g3",
+  "kind": "grounded",
+  "question": "What does the Cartesian-product operation produce when applied to the instructor and teaches relations?",
+  "gold_chunk_id": "slides_ch2:p16:0",
+  "reference_answer": "It constructs a tuple of the result out of each possible pair of tuples: one from the instructor relation and one from the teaches relation, and since the instructor ID appears in both relations we distinguish between these attributes by attaching the relation name (e.g., instructor.ID, teaches.ID)."
+ },
+ {
+  "id": "g4",
+  "kind": "grounded",
+  "question": "What are the three parallel database architectures mentioned?",
+  "gold_chunk_id": "slides_ch1:p24:0",
+  "reference_answer": "Many core shared memory, shared disk, and shared nothing."
+ },
+ {
+  "id": "g5",
+  "kind": "grounded",
+  "question": "How can the functional dependency A → H be derived from the given set of functional dependencies?",
+  "gold_chunk_id": "slides_ch7:p36:0",
+  "reference_answer": "By transitivity from A → B and B → H."
+ },
+ {
+  "id": "g6",
+  "kind": "grounded",
+  "question": "In a 3NF decomposition, where is a candidate key guaranteed to appear?",
+  "gold_chunk_id": "slides_ch7:p88:0",
+  "reference_answer": "A candidate key (C) is in one of the relations Ri in the decomposition."
+ },
+ {
+  "id": "g7",
+  "kind": "grounded",
+  "question": "What does the restriction of a set of functional dependencies F to a relation schema Ri consist of?",
+  "gold_chunk_id": "slides_ch7:p52:0",
+  "reference_answer": "The restriction of F to Ri is the set Fi of all functional dependencies in F⁺ that include only attributes of Ri."
+ },
+ {
+  "id": "g8",
+  "kind": "grounded",
+  "question": "What is the domain of an attribute?",
+  "gold_chunk_id": "slides_ch2:p4:0",
+  "reference_answer": "The set of allowed values for each attribute is called the domain of the attribute."
+ },
+ {
+  "id": "g9",
+  "kind": "grounded",
+  "question": "Why is the decomposition of employee(ID, name, street, city, salary) into employee1(ID, name) and employee2(name, street, city, salary) considered lossy?",
+  "gold_chunk_id": "slides_ch7:p4:0",
+  "reference_answer": "The problem arises when we have two employees with the same name; we lose information and cannot reconstruct the original employee relation, making it a lossy decomposition."
+ },
+ {
+  "id": "g10",
+  "kind": "grounded",
+  "question": "How is the closure of a set of functional dependencies F computed?",
+  "gold_chunk_id": "slides_ch7:p38:0",
+  "reference_answer": "Begin with F+ = F, then repeatedly apply reflexivity and augmentation to each functional dependency, add the resulting dependencies, combine pairs using transitivity, and continue until F+ does not change any further."
+ },
+ {
+  "id": "g11",
+  "kind": "grounded",
+  "question": "What is a file-based system and how does it manage data?",
+  "gold_chunk_id": "textbook:p10:0",
+  "reference_answer": "A file-based system stores information in permanent files and uses a number of application programs—written at users' request—to manipulate those data files, adding new applications as the need arises."
+ },
+ {
+  "id": "g12",
+  "kind": "grounded",
+  "question": "What language is used to specify the logical schema at the end of the design stage?",
+  "gold_chunk_id": "textbook:p96:1",
+  "reference_answer": "At the end of our design stage, the logical schema will be specified by SQL data definition language (DDL) statements."
+ },
+ {
+  "id": "g13",
+  "kind": "grounded",
+  "question": "What type of relationship is described as the norm in relational database design, exemplified by one department having many employees?",
+  "gold_chunk_id": "textbook:p49:1",
+  "reference_answer": "A one to many (1:M) relationship should be the norm in any relational database design."
+ },
+ {
+  "id": "g14",
+  "kind": "grounded",
+  "question": "Can a UNIQUE constraint be applied to columns that allow NULL values, and if so, how many NULL rows are permitted?",
+  "gold_chunk_id": "textbook:p107:0",
+  "reference_answer": "A UNIQUE constraint can be placed on columns that accept nulls. Only one row can be NULL."
+ },
+ {
+  "id": "g15",
+  "kind": "grounded",
+  "question": "Which DBMS feature guarantees that data stays consistent and valid when several users update the same information during transaction processing?",
+  "gold_chunk_id": "textbook:p20:1",
+  "reference_answer": "A database management system must include concurrency control subsystems, which ensure that data remains consistent and valid during transaction processing even if several users update the same information."
+ },
+ {
+  "id": "g16",
+  "kind": "grounded",
+  "question": "According to the decomposition rule, what is implied when X determines both Y and Z?",
+  "gold_chunk_id": "textbook:p80:0",
+  "reference_answer": "The rule states that if X determines Y and Z, then X determines Y and X determines Z separately."
+ },
+ {
+  "id": "g17",
+  "kind": "grounded",
+  "question": "What abbreviation represents the day of the year and what range of values can it have?",
+  "gold_chunk_id": "textbook:p129:0",
+  "reference_answer": "Day of year dy 1-366"
+ },
+ {
+  "id": "g18",
+  "kind": "grounded",
+  "question": "Who contributed the section on normalization?",
+  "gold_chunk_id": "textbook:p9:0",
+  "reference_answer": "Dr. Gordon Russell contributed the section on normalization."
+ },
+ {
+  "id": "g19",
+  "kind": "grounded",
+  "question": "What do concurrency control strategies ensure in multiuser database systems?",
+  "gold_chunk_id": "textbook:p19:1",
+  "reference_answer": "These strategies ensure that the data accessed are always correct and that data integrity is maintained."
+ },
+ {
+  "id": "g20",
+  "kind": "grounded",
+  "question": "What WHERE clause would you use to select only publishers that are located in Vancouver?",
+  "gold_chunk_id": "textbook:p115:1",
+  "reference_answer": "You would use the SELECT statement with the WHERE criterion: WHERE city = ‘Vancouver’."
+ },
+ {
+  "id": "g21",
+  "kind": "grounded",
+  "question": "What is the core mathematical formulation that dictates relational database design?",
+  "gold_chunk_id": "video_K5jqNjnE-pE:t1169",
+  "reference_answer": "The core of what the mathematical formulation which dictates much of the database, relational database design is known as functional dependencies."
+ },
+ {
+  "id": "g22",
+  "kind": "grounded",
+  "question": "What is the first decision to make when designing an E‑R model for objects such as instructor, student, or project?",
+  "gold_chunk_id": "video_LMAELfNAGF4:t1926",
+  "reference_answer": "The first decision is whether to use an attribute or an entity set to represent the object."
+ },
+ {
+  "id": "g23",
+  "kind": "grounded",
+  "question": "What topics are covered in module 3 of the Database Management Systems course?",
+  "gold_chunk_id": "video_rrG7azSlyWI:t10",
+  "reference_answer": "In module 3 we will understand the modules of database management systems, familiarize with the major components of the database engine, discuss the basic architecture and internal components of a DBMS, and present a brief historical perspective of the DBMS."
+ },
+ {
+  "id": "g24",
+  "kind": "grounded",
+  "question": "What does the complementation rule for multivalued dependencies state?",
+  "gold_chunk_id": "video_qz0bimEpdQo:t725",
+  "reference_answer": "If X multivalues determines Y, then X also multivalues determines the remaining attributes, i.e., R minus (X ∪ Y)."
+ },
+ {
+  "id": "g25",
+  "kind": "grounded",
+  "question": "What will be covered in the current module on the entity-relationship model?",
+  "gold_chunk_id": "video_LMAELfNAGF4:t12",
+  "reference_answer": "In this module we will go through a few extended features of the E‑R model, show some of the more complicated situations how they can be modeled in the E‑R model, and discuss a variety of design issues that will follow."
+ },
+ {
+  "id": "g26",
+  "kind": "grounded",
+  "question": "What concepts related to functional dependencies were covered in this module?",
+  "gold_chunk_id": "video_9-uqoJK6KPc:t1833",
+  "reference_answer": "We discussed issues in good design in the context of functional dependencies, extended the theory of functional dependencies, and addressed the use of closure sets, including the closure of functional dependencies and the closure of attributes."
+ },
+ {
+  "id": "g27",
+  "kind": "grounded",
+  "question": "What are the three types of formal relational query languages?",
+  "gold_chunk_id": "video_iHrvzgQxybY:t63",
+  "reference_answer": "Formal relational query languages are of three types: relational algebra (procedural), tuple relational calculus (non‑procedural), and domain relational calculus."
+ },
+ {
+  "id": "g28",
+  "kind": "grounded",
+  "question": "Why is normalization performed on a relational schema after an initial design based on an E‑R diagram?",
+  "gold_chunk_id": "video_EnTIVJi4bW4:t76",
+  "reference_answer": "Normalization is a technique of refinement to organize the data in the database, and it is needed because a design for a relational schema may give rise to a variety of anomalies in the data."
+ },
+ {
+  "id": "g29",
+  "kind": "grounded",
+  "question": "Which modules introduce SQL at a first level?",
+  "gold_chunk_id": "video_w1XdPholzWY:t10",
+  "reference_answer": "Modules 6, 7, and 8 will introduce SQL at a first level."
+ },
+ {
+  "id": "g30",
+  "kind": "grounded",
+  "question": "What is a compound key in a relational schema?",
+  "gold_chunk_id": "video_DRSog3SA4-Y:t1528",
+  "reference_answer": "A key is called compound if it consists of more than one attribute to uniquely identify an entity occurrence."
+ },
+ {
+  "id": "o1",
+  "kind": "off_material",
+  "question": "Who won the cricket world cup in 2011?",
+  "gold_chunk_id": null,
+  "reference_answer": null
+ },
+ {
+  "id": "o2",
+  "kind": "off_material",
+  "question": "What is the capital of France?",
+  "gold_chunk_id": null,
+  "reference_answer": null
+ },
+ {
+  "id": "o3",
+  "kind": "off_material",
+  "question": "How do I train a neural network?",
+  "gold_chunk_id": null,
+  "reference_answer": null
+ },
+ {
+  "id": "o4",
+  "kind": "off_material",
+  "question": "Explain quantum entanglement.",
+  "gold_chunk_id": null,
+  "reference_answer": null
+ },
+ {
+  "id": "o5",
+  "kind": "off_material",
+  "question": "How do I bake sourdough bread?",
+  "gold_chunk_id": null,
+  "reference_answer": null
+ },
+ {
+  "id": "o6",
+  "kind": "off_material",
+  "question": "What is gradient descent?",
+  "gold_chunk_id": null,
+  "reference_answer": null
+ },
+ {
+  "id": "o7",
+  "kind": "off_material",
+  "question": "How does TCP congestion control work?",
+  "gold_chunk_id": null,
+  "reference_answer": null
+ },
+ {
+  "id": "o8",
+  "kind": "off_material",
+  "question": "What is a Kubernetes pod?",
+  "gold_chunk_id": null,
+  "reference_answer": null
+ },
+ {
+  "id": "o9",
+  "kind": "off_material",
+  "question": "Tell me about the French revolution.",
+  "gold_chunk_id": null,
+  "reference_answer": null
+ },
+ {
+  "id": "o10",
+  "kind": "off_material",
+  "question": "How do vaccines work?",
+  "gold_chunk_id": null,
+  "reference_answer": null
+ },
+ {
+  "id": "o11",
+  "kind": "off_material",
+  "question": "What is the speed of light?",
+  "gold_chunk_id": null,
+  "reference_answer": null
+ },
+ {
+  "id": "o12",
+  "kind": "off_material",
+  "question": "Explain how a transformer language model works.",
+  "gold_chunk_id": null,
+  "reference_answer": null
+ }
+]

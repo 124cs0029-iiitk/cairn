@@ -1,0 +1,4109 @@
+{
+ "concepts": [
+  {
+   "id": "database_system",
+   "name": "Database System",
+   "topic": "Introduction to databases",
+   "description": "A coordinated collection of software and data that enables users to store, retrieve, and manage information efficiently.",
+   "prerequisites": []
+  },
+  {
+   "id": "data_model",
+   "name": "Data Model",
+   "topic": "Introduction to databases",
+   "description": "An abstract framework that defines how data is structured, stored, and related within a database.",
+   "prerequisites": [
+    "database_system"
+   ]
+  },
+  {
+   "id": "relational_model",
+   "name": "Relational Model",
+   "topic": "Introduction to databases",
+   "description": "A data model that represents information as tables (relations) with rows and columns, using keys to establish relationships.",
+   "prerequisites": [
+    "data_model"
+   ]
+  },
+  {
+   "id": "sql_language",
+   "name": "SQL Language",
+   "topic": "Introduction to databases",
+   "description": "A declarative language (including DDL and DML) used to define schemas, manipulate data, and query relational databases.",
+   "prerequisites": [
+    "relational_model"
+   ]
+  },
+  {
+   "id": "schema_and_instance",
+   "name": "Schema and Instance",
+   "topic": "Introduction to databases",
+   "description": "The schema is the structural definition of a database, while an instance is the actual data populating that structure at a given time.",
+   "prerequisites": [
+    "relational_model"
+   ]
+  },
+  {
+   "id": "storage_manager",
+   "name": "Storage Manager",
+   "topic": "Introduction to databases",
+   "description": "The component responsible for managing on‑disk storage, including file organization, indexing, and buffer management.",
+   "prerequisites": [
+    "database_system"
+   ]
+  },
+  {
+   "id": "query_processor",
+   "name": "Query Processor",
+   "topic": "Introduction to databases",
+   "description": "The subsystem that parses, optimizes, and executes SQL queries, translating them into low‑level operations on the storage manager.",
+   "prerequisites": [
+    "sql_language",
+    "relational_model"
+   ]
+  },
+  {
+   "id": "transaction_management",
+   "name": "Transaction Management",
+   "topic": "Introduction to databases",
+   "description": "Mechanisms that ensure atomicity, consistency, isolation, and durability (ACID) of concurrent database operations.",
+   "prerequisites": [
+    "query_processor",
+    "storage_manager"
+   ]
+  },
+  {
+   "id": "relation",
+   "name": "Relation",
+   "topic": "The relational model",
+   "description": "A relation is a set of tuples having the same attributes, representing a table in the relational model.",
+   "prerequisites": [
+    "relational_model"
+   ]
+  },
+  {
+   "id": "attribute",
+   "name": "Attribute",
+   "topic": "The relational model",
+   "description": "An attribute is a named column of a relation that defines a data domain for its values.",
+   "prerequisites": [
+    "relation"
+   ]
+  },
+  {
+   "id": "key",
+   "name": "Key",
+   "topic": "The relational model",
+   "description": "A key is a set of one or more attributes that uniquely identifies each tuple in a relation.",
+   "prerequisites": [
+    "relation",
+    "attribute"
+   ]
+  },
+  {
+   "id": "relational_algebra",
+   "name": "Relational Algebra",
+   "topic": "The relational model",
+   "description": "A formal language consisting of operators that manipulate relations to produce new relations.",
+   "prerequisites": [
+    "relation"
+   ]
+  },
+  {
+   "id": "select_operation",
+   "name": "Select Operation (σ)",
+   "topic": "The relational model",
+   "description": "Select extracts tuples from a relation that satisfy a given predicate.",
+   "prerequisites": [
+    "relational_algebra"
+   ]
+  },
+  {
+   "id": "join_operation",
+   "name": "Join Operation (⨝)",
+   "topic": "The relational model",
+   "description": "Join combines tuples from two relations based on a common attribute condition.",
+   "prerequisites": [
+    "select_operation",
+    "relational_algebra"
+   ]
+  },
+  {
+   "id": "schema_diagram",
+   "name": "Schema Diagram",
+   "topic": "The relational model",
+   "description": "A visual representation of relations, their attributes, and key constraints within a database schema.",
+   "prerequisites": [
+    "relation",
+    "key"
+   ]
+  },
+  {
+   "id": "aggregate_function",
+   "name": "Aggregate Function",
+   "topic": "The relational model",
+   "description": "An aggregate computes a summary value (e.g., COUNT, SUM) over a set of tuples, often used with GROUP BY.",
+   "prerequisites": [
+    "relational_algebra"
+   ]
+  },
+  {
+   "id": "sql_syntax",
+   "name": "SQL Syntax",
+   "topic": "SQL",
+   "description": "The basic textual structure and keywords used to write SQL statements.",
+   "prerequisites": [
+    "sql_language"
+   ]
+  },
+  {
+   "id": "create_table",
+   "name": "CREATE TABLE",
+   "topic": "SQL",
+   "description": "Statement that defines a new relation, its attributes, and their data types.",
+   "prerequisites": [
+    "sql_syntax",
+    "relational_model"
+   ]
+  },
+  {
+   "id": "integrity_constraints",
+   "name": "Integrity Constraints",
+   "topic": "SQL",
+   "description": "Rules such as PRIMARY KEY, FOREIGN KEY, UNIQUE, and CHECK that enforce data validity.",
+   "prerequisites": [
+    "create_table",
+    "key"
+   ]
+  },
+  {
+   "id": "select_query",
+   "name": "SELECT Query Structure",
+   "topic": "SQL",
+   "description": "The core query form consisting of SELECT, FROM, WHERE, GROUP BY, HAVING, and ORDER BY clauses.",
+   "prerequisites": [
+    "sql_syntax",
+    "relation"
+   ]
+  },
+  {
+   "id": "join_operations_sql",
+   "name": "SQL Joins",
+   "topic": "SQL",
+   "description": "Operations that combine rows from two or more tables using INNER, LEFT, RIGHT, FULL, and CROSS joins.",
+   "prerequisites": [
+    "select_query",
+    "join_operation"
+   ]
+  },
+  {
+   "id": "subqueries",
+   "name": "Subqueries",
+   "topic": "SQL",
+   "description": "Nested SELECT statements that can appear in SELECT, FROM, WHERE, or HAVING clauses.",
+   "prerequisites": [
+    "select_query"
+   ]
+  },
+  {
+   "id": "aggregate_functions_sql",
+   "name": "Aggregate Functions & GROUP BY",
+   "topic": "SQL",
+   "description": "Functions like COUNT, SUM, AVG, MIN, MAX used with GROUP BY to summarize data.",
+   "prerequisites": [
+    "select_query",
+    "aggregate_function"
+   ]
+  },
+  {
+   "id": "with_clause",
+   "name": "WITH Clause (CTE)",
+   "topic": "SQL",
+   "description": "Defines temporary named result sets (common table expressions) for use within a larger query.",
+   "prerequisites": [
+    "select_query",
+    "subqueries"
+   ]
+  },
+  {
+   "id": "entity_set",
+   "name": "Entity Set",
+   "topic": "Entity-Relationship model",
+   "description": "A collection of similar entities that share the same attributes.",
+   "prerequisites": [
+    "attribute"
+   ]
+  },
+  {
+   "id": "relationship_set",
+   "name": "Relationship Set",
+   "topic": "Entity-Relationship model",
+   "description": "A set of associations among entities, each instance linking specific entity occurrences.",
+   "prerequisites": [
+    "entity_set"
+   ]
+  },
+  {
+   "id": "cardinality_constraints",
+   "name": "Cardinality Constraints",
+   "topic": "Entity-Relationship model",
+   "description": "Rules that specify the minimum and maximum number of entity instances that can participate in a relationship.",
+   "prerequisites": [
+    "relationship_set"
+   ]
+  },
+  {
+   "id": "weak_entity_set",
+   "name": "Weak Entity Set",
+   "topic": "Entity-Relationship model",
+   "description": "An entity set that cannot be uniquely identified by its own attributes alone and depends on a owning (strong) entity.",
+   "prerequisites": [
+    "entity_set",
+    "key"
+   ]
+  },
+  {
+   "id": "specialization_generalization",
+   "name": "Specialization / Generalization",
+   "topic": "Entity-Relationship model",
+   "description": "A hierarchical modeling construct that groups entities into super‑type and sub‑type sets based on distinguishing attributes.",
+   "prerequisites": [
+    "entity_set",
+    "relationship_set"
+   ]
+  },
+  {
+   "id": "aggregation",
+   "name": "Aggregation",
+   "topic": "Entity-Relationship model",
+   "description": "A modeling technique that treats a relationship set (and its participating entities) as a higher‑level entity for further relationships.",
+   "prerequisites": [
+    "relationship_set"
+   ]
+  },
+  {
+   "id": "er_diagram_notation",
+   "name": "ER Diagram Notation",
+   "topic": "Entity-Relationship model",
+   "description": "Standard symbols (rectangles, diamonds, ovals, etc.) used to visually represent entities, relationships, attributes, and constraints.",
+   "prerequisites": [
+    "entity_set",
+    "relationship_set",
+    "cardinality_constraints"
+   ]
+  },
+  {
+   "id": "mapping_er_to_relational",
+   "name": "Mapping ER to Relational Schema",
+   "topic": "Entity-Relationship model",
+   "description": "The systematic process of converting entity sets, relationship sets, and constraints into tables, columns, and keys in a relational database.",
+   "prerequisites": [
+    "entity_set",
+    "relationship_set",
+    "weak_entity_set",
+    "specialization_generalization",
+    "relational_model"
+   ]
+  },
+  {
+   "id": "functional_dependency",
+   "name": "Functional Dependency",
+   "topic": "Normalization",
+   "description": "A constraint X → Y indicating that attribute set X uniquely determines attribute set Y in a relation.",
+   "prerequisites": [
+    "attribute",
+    "relation",
+    "key"
+   ]
+  },
+  {
+   "id": "attribute_closure",
+   "name": "Attribute Closure",
+   "topic": "Normalization",
+   "description": "The set of all attributes functionally implied by a given attribute set under a set of functional dependencies.",
+   "prerequisites": [
+    "functional_dependency"
+   ]
+  },
+  {
+   "id": "lossless_decomposition",
+   "name": "Lossless Decomposition",
+   "topic": "Normalization",
+   "description": "A decomposition of a relation into smaller relations that preserves the original information when the pieces are joined.",
+   "prerequisites": [
+    "functional_dependency",
+    "attribute_closure"
+   ]
+  },
+  {
+   "id": "dependency_preservation",
+   "name": "Dependency Preservation",
+   "topic": "Normalization",
+   "description": "A property of a decomposition where the union of functional dependencies of the component schemas is equivalent to the original set.",
+   "prerequisites": [
+    "functional_dependency"
+   ]
+  },
+  {
+   "id": "third_normal_form",
+   "name": "Third Normal Form (3NF)",
+   "topic": "Normalization",
+   "description": "A relation is in 3NF if for every non‑trivial functional dependency X → A, X is a superkey or A is a prime attribute.",
+   "prerequisites": [
+    "functional_dependency",
+    "attribute_closure",
+    "key"
+   ]
+  },
+  {
+   "id": "boyce_codd_normal_form",
+   "name": "Boyce‑Codd Normal Form (BCNF)",
+   "topic": "Normalization",
+   "description": "A stricter form of 3NF where for every non‑trivial functional dependency X → Y, X must be a superkey.",
+   "prerequisites": [
+    "functional_dependency",
+    "attribute_closure"
+   ]
+  },
+  {
+   "id": "multivalued_dependency",
+   "name": "Multivalued Dependency (MVD)",
+   "topic": "Normalization",
+   "description": "A constraint X ↠ Y indicating that the set of Y values associated with X is independent of other attributes.",
+   "prerequisites": [
+    "functional_dependency"
+   ]
+  },
+  {
+   "id": "fourth_normal_form",
+   "name": "Fourth Normal Form (4NF)",
+   "topic": "Normalization",
+   "description": "A relation is in 4NF if it is in BCNF and has no non‑trivial multivalued dependencies other than a key.",
+   "prerequisites": [
+    "boyce_codd_normal_form",
+    "multivalued_dependency"
+   ]
+  }
+ ],
+ "tags": {
+  "textbook:p1:0": [
+   "schema_diagram",
+   "integrity_constraints"
+  ],
+  "textbook:p2:0": [
+   "schema_diagram",
+   "create_table"
+  ],
+  "textbook:p3:0": [
+   "schema_diagram",
+   "er_diagram_notation"
+  ],
+  "textbook:p3:1": [
+   "sql_syntax",
+   "mapping_er_to_relational"
+  ],
+  "textbook:p5:0": [
+   "mapping_er_to_relational",
+   "data_model"
+  ],
+  "textbook:p6:0": [
+   "sql_syntax",
+   "schema_diagram"
+  ],
+  "textbook:p7:0": [
+   "sql_syntax",
+   "schema_and_instance"
+  ],
+  "textbook:p8:0": [
+   "schema_diagram",
+   "mapping_er_to_relational"
+  ],
+  "textbook:p8:1": [
+   "er_diagram_notation",
+   "fourth_normal_form"
+  ],
+  "textbook:p9:0": [
+   "mapping_er_to_relational",
+   "schema_diagram"
+  ],
+  "textbook:p9:1": [
+   "transaction_management",
+   "boyce_codd_normal_form"
+  ],
+  "textbook:p10:0": [
+   "database_system"
+  ],
+  "textbook:p10:1": [
+   "schema_and_instance",
+   "integrity_constraints"
+  ],
+  "textbook:p11:0": [
+   "integrity_constraints"
+  ],
+  "textbook:p11:1": [
+   "transaction_management"
+  ],
+  "textbook:p12:0": [
+   "database_system"
+  ],
+  "textbook:p12:1": [
+   "database_system",
+   "schema_and_instance"
+  ],
+  "textbook:p13:0": [
+   "transaction_management"
+  ],
+  "textbook:p13:1": [
+   "select_query",
+   "schema_and_instance"
+  ],
+  "textbook:p14:0": [
+   "schema_diagram"
+  ],
+  "textbook:p15:0": [
+   "schema_and_instance",
+   "database_system"
+  ],
+  "textbook:p15:1": [
+   "schema_and_instance",
+   "relational_algebra"
+  ],
+  "textbook:p16:0": [
+   "database_system"
+  ],
+  "textbook:p17:0": [
+   "data_model",
+   "database_system"
+  ],
+  "textbook:p18:0": [
+   "database_system"
+  ],
+  "textbook:p18:1": [
+   "database_system",
+   "schema_and_instance"
+  ],
+  "textbook:p19:0": [
+   "data_model",
+   "schema_and_instance"
+  ],
+  "textbook:p19:1": [
+   "database_system",
+   "transaction_management"
+  ],
+  "textbook:p19:2": [
+   "database_system",
+   "transaction_management"
+  ],
+  "textbook:p20:0": [
+   "integrity_constraints"
+  ],
+  "textbook:p20:1": [
+   "transaction_management",
+   "database_system"
+  ],
+  "textbook:p21:0": [
+   "transaction_management",
+   "database_system"
+  ],
+  "textbook:p21:1": [
+   "database_system",
+   "schema_and_instance"
+  ],
+  "textbook:p22:0": [
+   "sql_syntax",
+   "integrity_constraints"
+  ],
+  "textbook:p23:0": [
+   "relational_model",
+   "data_model"
+  ],
+  "textbook:p23:1": [
+   "relational_model",
+   "data_model"
+  ],
+  "textbook:p24:0": [
+   "relational_model",
+   "data_model"
+  ],
+  "textbook:p25:0": [
+   "data_model",
+   "relational_model"
+  ],
+  "textbook:p26:0": [
+   "data_model",
+   "relational_model"
+  ],
+  "textbook:p26:1": [
+   "data_model"
+  ],
+  "textbook:p26:2": [
+   "data_model",
+   "schema_diagram"
+  ],
+  "textbook:p27:0": [
+   "data_model",
+   "relational_model"
+  ],
+  "textbook:p27:1": [
+   "relational_model",
+   "data_model"
+  ],
+  "textbook:p28:0": [
+   "data_model"
+  ],
+  "textbook:p28:1": [
+   "schema_and_instance",
+   "schema_diagram"
+  ],
+  "textbook:p29:0": [
+   "schema_and_instance"
+  ],
+  "textbook:p29:1": [
+   "schema_and_instance",
+   "integrity_constraints"
+  ],
+  "textbook:p30:0": [
+   "data_model",
+   "mapping_er_to_relational"
+  ],
+  "textbook:p30:1": [
+   "data_model",
+   "schema_and_instance"
+  ],
+  "textbook:p31:0": [
+   "schema_diagram",
+   "data_model"
+  ],
+  "textbook:p32:0": [
+   "data_model",
+   "relational_model"
+  ],
+  "textbook:p32:1": [
+   "database_system",
+   "data_model"
+  ],
+  "textbook:p33:0": [
+   "database_system"
+  ],
+  "textbook:p34:0": [
+   "database_system",
+   "transaction_management"
+  ],
+  "textbook:p34:1": [
+   "database_system",
+   "data_model"
+  ],
+  "textbook:p35:0": [
+   "database_system",
+   "transaction_management"
+  ],
+  "textbook:p36:0": [
+   "relational_model"
+  ],
+  "textbook:p36:1": [
+   "relational_model",
+   "relation"
+  ],
+  "textbook:p37:0": [
+   "schema_and_instance",
+   "attribute"
+  ],
+  "textbook:p37:1": [
+   "relational_model"
+  ],
+  "textbook:p38:0": [
+   "attribute",
+   "schema_and_instance"
+  ],
+  "textbook:p38:1": [
+   "sql_syntax",
+   "create_table"
+  ],
+  "textbook:p39:0": [
+   "attribute"
+  ],
+  "textbook:p39:1": [
+   "sql_language",
+   "relational_model"
+  ],
+  "textbook:p40:0": [
+   "mapping_er_to_relational",
+   "relational_model"
+  ],
+  "textbook:p41:0": [
+   "schema_diagram",
+   "relational_model"
+  ],
+  "textbook:p42:0": [
+   "mapping_er_to_relational"
+  ],
+  "textbook:p42:1": [
+   "weak_entity_set",
+   "schema_and_instance"
+  ],
+  "textbook:p42:2": [
+   "weak_entity_set"
+  ],
+  "textbook:p43:0": [
+   "weak_entity_set",
+   "entity_set"
+  ],
+  "textbook:p43:1": [
+   "schema_and_instance",
+   "integrity_constraints"
+  ],
+  "textbook:p44:0": [
+   "mapping_er_to_relational",
+   "relationship_set"
+  ],
+  "textbook:p44:1": [
+   "mapping_er_to_relational",
+   "attribute"
+  ],
+  "textbook:p45:0": [
+   "attribute",
+   "er_diagram_notation"
+  ],
+  "textbook:p45:1": [
+   "mapping_er_to_relational",
+   "relational_model"
+  ],
+  "textbook:p46:0": [
+   "key",
+   "attribute"
+  ],
+  "textbook:p47:0": [
+   "key"
+  ],
+  "textbook:p47:1": [
+   "key",
+   "mapping_er_to_relational"
+  ],
+  "textbook:p48:0": [
+   "key",
+   "integrity_constraints"
+  ],
+  "textbook:p48:1": [
+   "aggregate_functions_sql",
+   "mapping_er_to_relational"
+  ],
+  "textbook:p49:0": [
+   "mapping_er_to_relational",
+   "integrity_constraints"
+  ],
+  "textbook:p49:1": [
+   "relation",
+   "relational_model"
+  ],
+  "textbook:p50:0": [
+   "relationship_set",
+   "cardinality_constraints"
+  ],
+  "textbook:p50:1": [
+   "mapping_er_to_relational",
+   "create_table"
+  ],
+  "textbook:p51:0": [
+   "mapping_er_to_relational",
+   "schema_diagram"
+  ],
+  "textbook:p52:0": [
+   "key",
+   "relation"
+  ],
+  "textbook:p52:1": [
+   "attribute"
+  ],
+  "textbook:p53:0": [
+   "mapping_er_to_relational"
+  ],
+  "textbook:p53:1": [
+   "mapping_er_to_relational",
+   "key"
+  ],
+  "textbook:p54:0": [
+   "integrity_constraints",
+   "mapping_er_to_relational"
+  ],
+  "textbook:p55:0": [
+   "mapping_er_to_relational",
+   "integrity_constraints"
+  ],
+  "textbook:p56:0": [
+   "mapping_er_to_relational",
+   "integrity_constraints"
+  ],
+  "textbook:p57:0": [
+   "mapping_er_to_relational",
+   "weak_entity_set"
+  ],
+  "textbook:p58:0": [
+   "integrity_constraints"
+  ],
+  "textbook:p58:1": [
+   "integrity_constraints"
+  ],
+  "textbook:p58:2": [
+   "integrity_constraints"
+  ],
+  "textbook:p59:0": [
+   "integrity_constraints"
+  ],
+  "textbook:p59:1": [
+   "integrity_constraints"
+  ],
+  "textbook:p60:0": [
+   "integrity_constraints"
+  ],
+  "textbook:p60:1": [
+   "cardinality_constraints",
+   "integrity_constraints"
+  ],
+  "textbook:p61:0": [
+   "cardinality_constraints"
+  ],
+  "textbook:p61:1": [
+   "er_diagram_notation"
+  ],
+  "textbook:p62:0": [
+   "integrity_constraints",
+   "third_normal_form"
+  ],
+  "textbook:p63:0": [
+   "er_diagram_notation",
+   "cardinality_constraints"
+  ],
+  "textbook:p64:0": [
+   "er_diagram_notation",
+   "third_normal_form"
+  ],
+  "textbook:p65:0": [
+   "er_diagram_notation",
+   "schema_diagram"
+  ],
+  "textbook:p65:1": [
+   "integrity_constraints"
+  ],
+  "textbook:p66:0": [
+   "cardinality_constraints",
+   "integrity_constraints"
+  ],
+  "textbook:p66:1": [
+   "integrity_constraints"
+  ],
+  "textbook:p67:0": [
+   "mapping_er_to_relational",
+   "relational_model"
+  ],
+  "textbook:p68:0": [
+   "integrity_constraints",
+   "sql_syntax"
+  ],
+  "textbook:p68:1": [
+   "integrity_constraints"
+  ],
+  "textbook:p69:0": [
+   "integrity_constraints",
+   "weak_entity_set"
+  ],
+  "textbook:p70:0": [
+   "functional_dependency",
+   "mapping_er_to_relational"
+  ],
+  "textbook:p70:1": [
+   "create_table",
+   "join_operations_sql"
+  ],
+  "textbook:p71:0": [
+   "integrity_constraints",
+   "er_diagram_notation"
+  ],
+  "textbook:p72:0": [
+   "integrity_constraints",
+   "create_table"
+  ],
+  "textbook:p73:0": [
+   "create_table",
+   "mapping_er_to_relational"
+  ],
+  "textbook:p74:0": [
+   "functional_dependency",
+   "third_normal_form"
+  ],
+  "textbook:p75:0": [
+   "mapping_er_to_relational",
+   "integrity_constraints"
+  ],
+  "textbook:p75:1": [
+   "mapping_er_to_relational"
+  ],
+  "textbook:p76:0": [
+   "functional_dependency"
+  ],
+  "textbook:p77:0": [
+   "functional_dependency"
+  ],
+  "textbook:p77:1": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "textbook:p78:0": [
+   "functional_dependency"
+  ],
+  "textbook:p78:1": [
+   "third_normal_form",
+   "functional_dependency"
+  ],
+  "textbook:p79:0": [
+   "functional_dependency",
+   "third_normal_form"
+  ],
+  "textbook:p79:1": [
+   "functional_dependency",
+   "join_operation"
+  ],
+  "textbook:p80:0": [
+   "dependency_preservation",
+   "lossless_decomposition"
+  ],
+  "textbook:p80:1": [
+   "functional_dependency"
+  ],
+  "textbook:p81:0": [
+   "functional_dependency"
+  ],
+  "textbook:p82:0": [
+   "mapping_er_to_relational"
+  ],
+  "textbook:p82:1": [
+   "boyce_codd_normal_form",
+   "fourth_normal_form"
+  ],
+  "textbook:p83:0": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "textbook:p83:1": [
+   "specialization_generalization",
+   "fourth_normal_form"
+  ],
+  "textbook:p84:0": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "textbook:p84:1": [
+   "specialization_generalization",
+   "boyce_codd_normal_form"
+  ],
+  "textbook:p85:0": [
+   "third_normal_form"
+  ],
+  "textbook:p85:1": [
+   "specialization_generalization",
+   "boyce_codd_normal_form"
+  ],
+  "textbook:p86:0": [
+   "boyce_codd_normal_form"
+  ],
+  "textbook:p86:1": [
+   "fourth_normal_form",
+   "specialization_generalization"
+  ],
+  "textbook:p87:0": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "textbook:p88:0": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "textbook:p88:1": [
+   "boyce_codd_normal_form"
+  ],
+  "textbook:p89:0": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "textbook:p90:0": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "textbook:p90:1": [
+   "mapping_er_to_relational",
+   "er_diagram_notation"
+  ],
+  "textbook:p91:0": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "textbook:p92:0": [
+   "schema_diagram",
+   "sql_language"
+  ],
+  "textbook:p92:1": [
+   "schema_diagram",
+   "sql_syntax"
+  ],
+  "textbook:p93:0": [
+   "database_system",
+   "mapping_er_to_relational"
+  ],
+  "textbook:p93:1": [
+   "schema_and_instance",
+   "data_model"
+  ],
+  "textbook:p94:0": [
+   "schema_diagram",
+   "data_model"
+  ],
+  "textbook:p94:1": [
+   "data_model"
+  ],
+  "textbook:p94:2": [
+   "data_model"
+  ],
+  "textbook:p95:0": [
+   "schema_diagram",
+   "relational_model"
+  ],
+  "textbook:p95:1": [
+   "mapping_er_to_relational",
+   "data_model"
+  ],
+  "textbook:p95:2": [
+   "schema_and_instance",
+   "integrity_constraints"
+  ],
+  "textbook:p96:0": [
+   "schema_and_instance",
+   "integrity_constraints"
+  ],
+  "textbook:p96:1": [
+   "integrity_constraints",
+   "sql_language"
+  ],
+  "textbook:p96:2": [
+   "integrity_constraints",
+   "mapping_er_to_relational"
+  ],
+  "textbook:p96:3": [
+   "database_system",
+   "create_table"
+  ],
+  "textbook:p97:0": [
+   "sql_language",
+   "create_table"
+  ],
+  "textbook:p97:1": [
+   "data_model",
+   "schema_and_instance"
+  ],
+  "textbook:p97:2": [
+   "mapping_er_to_relational",
+   "schema_diagram"
+  ],
+  "textbook:p98:0": [
+   "mapping_er_to_relational",
+   "integrity_constraints"
+  ],
+  "textbook:p98:1": [
+   "schema_diagram",
+   "sql_language"
+  ],
+  "textbook:p99:0": [
+   "schema_diagram",
+   "mapping_er_to_relational"
+  ],
+  "textbook:p100:0": [
+   "database_system"
+  ],
+  "textbook:p100:1": [
+   "database_system",
+   "schema_and_instance"
+  ],
+  "textbook:p101:0": [
+   "database_system"
+  ],
+  "textbook:p102:0": [
+   "sql_language",
+   "sql_syntax"
+  ],
+  "textbook:p102:1": [
+   "sql_language"
+  ],
+  "textbook:p103:0": [
+   "create_table"
+  ],
+  "textbook:p103:1": [
+   "integrity_constraints",
+   "sql_syntax"
+  ],
+  "textbook:p104:0": [
+   "integrity_constraints",
+   "boyce_codd_normal_form"
+  ],
+  "textbook:p104:1": [
+   "integrity_constraints"
+  ],
+  "textbook:p105:0": [
+   "integrity_constraints",
+   "sql_syntax"
+  ],
+  "textbook:p105:1": [
+   "integrity_constraints",
+   "sql_syntax"
+  ],
+  "textbook:p106:0": [
+   "integrity_constraints",
+   "create_table"
+  ],
+  "textbook:p106:1": [
+   "integrity_constraints"
+  ],
+  "textbook:p107:0": [
+   "integrity_constraints"
+  ],
+  "textbook:p107:1": [
+   "functional_dependency",
+   "integrity_constraints"
+  ],
+  "textbook:p108:0": [
+   "integrity_constraints"
+  ],
+  "textbook:p108:1": [
+   "select_query",
+   "sql_syntax"
+  ],
+  "textbook:p109:0": [
+   "integrity_constraints"
+  ],
+  "textbook:p110:0": [
+   "integrity_constraints"
+  ],
+  "textbook:p110:1": [
+   "sql_syntax",
+   "sql_language"
+  ],
+  "textbook:p111:0": [
+   "integrity_constraints",
+   "create_table"
+  ],
+  "textbook:p112:0": [
+   "sql_language"
+  ],
+  "textbook:p112:1": [
+   "select_query",
+   "sql_syntax"
+  ],
+  "textbook:p113:0": [
+   "sql_syntax",
+   "create_table"
+  ],
+  "textbook:p113:1": [
+   "sql_syntax",
+   "sql_language"
+  ],
+  "textbook:p114:0": [
+   "sql_language"
+  ],
+  "textbook:p114:1": [
+   "sql_syntax",
+   "subqueries"
+  ],
+  "textbook:p115:0": [
+   "with_clause",
+   "create_table"
+  ],
+  "textbook:p115:1": [
+   "subqueries",
+   "with_clause"
+  ],
+  "textbook:p116:0": [
+   "subqueries",
+   "select_query"
+  ],
+  "textbook:p117:0": [
+   "select_query",
+   "with_clause"
+  ],
+  "textbook:p117:1": [
+   "sql_syntax",
+   "join_operations_sql"
+  ],
+  "textbook:p118:0": [
+   "select_query",
+   "sql_syntax"
+  ],
+  "textbook:p119:0": [
+   "aggregate_functions_sql",
+   "select_query"
+  ],
+  "textbook:p120:0": [
+   "aggregate_functions_sql"
+  ],
+  "textbook:p121:0": [
+   "sql_syntax",
+   "create_table"
+  ],
+  "textbook:p121:1": [
+   "integrity_constraints",
+   "sql_syntax"
+  ],
+  "textbook:p122:0": [
+   "attribute",
+   "with_clause"
+  ],
+  "textbook:p122:1": [
+   "integrity_constraints",
+   "with_clause"
+  ],
+  "textbook:p123:0": [
+   "with_clause",
+   "create_table"
+  ],
+  "textbook:p123:1": [
+   "create_table",
+   "sql_syntax"
+  ],
+  "textbook:p124:0": [
+   "with_clause",
+   "create_table"
+  ],
+  "textbook:p125:0": [
+   "join_operations_sql",
+   "subqueries"
+  ],
+  "textbook:p126:0": [
+   "aggregate_functions_sql",
+   "aggregate_function"
+  ],
+  "textbook:p126:1": [
+   "aggregate_functions_sql"
+  ],
+  "textbook:p127:0": [
+   "join_operations_sql",
+   "aggregate_functions_sql"
+  ],
+  "textbook:p128:0": [
+   "sql_syntax",
+   "aggregate_functions_sql"
+  ],
+  "textbook:p129:0": [
+   "aggregate_functions_sql",
+   "aggregate_function"
+  ],
+  "textbook:p129:1": [
+   "join_operations_sql"
+  ],
+  "textbook:p130:0": [
+   "join_operations_sql"
+  ],
+  "textbook:p131:0": [
+   "join_operations_sql"
+  ],
+  "textbook:p131:1": [
+   "sql_language",
+   "sql_syntax"
+  ],
+  "textbook:p132:0": [
+   "join_operations_sql"
+  ],
+  "textbook:p132:1": [
+   "sql_syntax",
+   "database_system"
+  ],
+  "textbook:p133:0": [
+   "aggregate_functions_sql",
+   "sql_syntax"
+  ],
+  "textbook:p133:1": [
+   "sql_syntax",
+   "create_table"
+  ],
+  "textbook:p133:2": [
+   "join_operations_sql",
+   "sql_syntax"
+  ],
+  "textbook:p134:0": [
+   "join_operations_sql",
+   "sql_syntax"
+  ],
+  "textbook:p134:1": [
+   "select_query",
+   "sql_syntax"
+  ],
+  "textbook:p135:0": [
+   "sql_syntax",
+   "aggregate_functions_sql"
+  ],
+  "textbook:p136:0": [
+   "er_diagram_notation",
+   "data_model"
+  ],
+  "textbook:p136:1": [
+   "cardinality_constraints",
+   "relational_algebra"
+  ],
+  "textbook:p136:2": [
+   "mapping_er_to_relational",
+   "data_model"
+  ],
+  "textbook:p137:0": [
+   "mapping_er_to_relational",
+   "er_diagram_notation"
+  ],
+  "textbook:p138:0": [
+   "cardinality_constraints"
+  ],
+  "textbook:p138:1": [
+   "relational_model",
+   "attribute"
+  ],
+  "textbook:p139:0": [
+   "cardinality_constraints",
+   "integrity_constraints"
+  ],
+  "textbook:p140:0": [
+   "data_model",
+   "functional_dependency"
+  ],
+  "textbook:p141:0": [
+   "mapping_er_to_relational",
+   "er_diagram_notation"
+  ],
+  "textbook:p141:1": [
+   "mapping_er_to_relational",
+   "er_diagram_notation"
+  ],
+  "textbook:p142:0": [
+   "mapping_er_to_relational",
+   "er_diagram_notation"
+  ],
+  "textbook:p142:1": [
+   "mapping_er_to_relational",
+   "er_diagram_notation"
+  ],
+  "textbook:p143:0": [
+   "er_diagram_notation",
+   "sql_syntax"
+  ],
+  "textbook:p144:0": [
+   "create_table",
+   "sql_language"
+  ],
+  "textbook:p145:0": [
+   "create_table",
+   "sql_syntax"
+  ],
+  "textbook:p146:0": [
+   "integrity_constraints"
+  ],
+  "textbook:p147:0": [
+   "create_table",
+   "sql_syntax"
+  ],
+  "textbook:p148:0": [
+   "select_query",
+   "join_operations_sql"
+  ],
+  "textbook:p149:0": [
+   "join_operations_sql",
+   "create_table"
+  ],
+  "textbook:p149:1": [
+   "create_table",
+   "integrity_constraints"
+  ],
+  "textbook:p150:0": [
+   "sql_syntax",
+   "join_operations_sql"
+  ],
+  "textbook:p151:0": [
+   "mapping_er_to_relational",
+   "transaction_management"
+  ],
+  "textbook:p152:0": [
+   "fourth_normal_form",
+   "relational_algebra"
+  ],
+  "textbook:p153:0": [
+   "boyce_codd_normal_form",
+   "mapping_er_to_relational"
+  ],
+  "slides_ch1:p1:0": [
+   "database_system"
+  ],
+  "slides_ch1:p2:0": [
+   "database_system",
+   "transaction_management"
+  ],
+  "slides_ch1:p3:0": [
+   "database_system"
+  ],
+  "slides_ch1:p4:0": [
+   "database_system"
+  ],
+  "slides_ch1:p5:0": [
+   "transaction_management",
+   "database_system"
+  ],
+  "slides_ch1:p6:0": [
+   "relational_model",
+   "data_model"
+  ],
+  "slides_ch1:p7:0": [
+   "relational_model"
+  ],
+  "slides_ch1:p8:0": [
+   "relational_model",
+   "database_system"
+  ],
+  "slides_ch1:p9:0": [
+   "database_system",
+   "data_model"
+  ],
+  "slides_ch1:p10:0": [
+   "schema_and_instance"
+  ],
+  "slides_ch1:p11:0": [
+   "schema_and_instance"
+  ],
+  "slides_ch1:p12:0": [
+   "sql_language"
+  ],
+  "slides_ch1:p13:0": [
+   "sql_language"
+  ],
+  "slides_ch1:p14:0": [
+   "sql_language"
+  ],
+  "slides_ch1:p15:0": [
+   "sql_language"
+  ],
+  "slides_ch1:p16:0": [
+   "sql_language"
+  ],
+  "slides_ch1:p17:0": [
+   "schema_and_instance"
+  ],
+  "slides_ch1:p18:0": [
+   "database_system"
+  ],
+  "slides_ch1:p19:0": [
+   "storage_manager"
+  ],
+  "slides_ch1:p20:0": [
+   "storage_manager"
+  ],
+  "slides_ch1:p21:0": [
+   "query_processor",
+   "sql_language"
+  ],
+  "slides_ch1:p22:0": [
+   "query_processor"
+  ],
+  "slides_ch1:p23:0": [
+   "transaction_management"
+  ],
+  "slides_ch1:p24:0": [
+   "database_system",
+   "schema_and_instance"
+  ],
+  "slides_ch1:p25:0": [
+   "database_system",
+   "schema_and_instance"
+  ],
+  "slides_ch1:p26:0": [
+   "transaction_management",
+   "query_processor"
+  ],
+  "slides_ch1:p27:0": [
+   "database_system"
+  ],
+  "slides_ch1:p28:0": [
+   "database_system",
+   "storage_manager"
+  ],
+  "slides_ch1:p29:0": [
+   "database_system",
+   "relational_model"
+  ],
+  "slides_ch1:p30:0": [
+   "database_system",
+   "transaction_management"
+  ],
+  "slides_ch1:p31:0": [
+   "database_system",
+   "sql_language"
+  ],
+  "slides_ch1:p32:0": [
+   "schema_and_instance"
+  ],
+  "slides_ch1:p33:0": [
+   "schema_and_instance"
+  ],
+  "slides_ch2:p1:0": [
+   "schema_diagram"
+  ],
+  "slides_ch2:p2:0": [
+   "schema_diagram",
+   "relational_algebra"
+  ],
+  "slides_ch2:p3:0": [
+   "relation",
+   "attribute"
+  ],
+  "slides_ch2:p4:0": [
+   "attribute"
+  ],
+  "slides_ch2:p5:0": [
+   "relation",
+   "relational_algebra"
+  ],
+  "slides_ch2:p6:0": [
+   "schema_diagram"
+  ],
+  "slides_ch2:p7:0": [
+   "key"
+  ],
+  "slides_ch2:p8:0": [
+   "schema_diagram"
+  ],
+  "slides_ch2:p9:0": [
+   "relational_algebra"
+  ],
+  "slides_ch2:p10:0": [
+   "relational_algebra"
+  ],
+  "slides_ch2:p11:0": [
+   "select_operation"
+  ],
+  "slides_ch2:p12:0": [
+   "select_operation"
+  ],
+  "slides_ch2:p13:0": [
+   "attribute",
+   "select_operation"
+  ],
+  "slides_ch2:p14:0": [
+   "relational_algebra"
+  ],
+  "slides_ch2:p15:0": [
+   "relational_algebra"
+  ],
+  "slides_ch2:p16:0": [
+   "relational_algebra",
+   "join_operation"
+  ],
+  "slides_ch2:p17:0": [
+   "schema_diagram",
+   "relational_algebra"
+  ],
+  "slides_ch2:p18:0": [
+   "join_operation"
+  ],
+  "slides_ch2:p19:0": [
+   "join_operation"
+  ],
+  "slides_ch2:p20:0": [
+   "join_operation"
+  ],
+  "slides_ch2:p22:0": [
+   "join_operation",
+   "relational_algebra"
+  ],
+  "slides_ch2:p23:0": [
+   "join_operation",
+   "select_operation"
+  ],
+  "slides_ch2:p24:0": [
+   "join_operation",
+   "relation"
+  ],
+  "slides_ch2:p25:0": [
+   "relational_algebra"
+  ],
+  "slides_ch2:p26:0": [
+   "relational_algebra"
+  ],
+  "slides_ch2:p27:0": [
+   "aggregate_function"
+  ],
+  "slides_ch2:p28:0": [
+   "aggregate_function"
+  ],
+  "slides_ch2:p29:0": [
+   "aggregate_function"
+  ],
+  "slides_ch2:p30:0": [
+   "relational_algebra"
+  ],
+  "slides_ch2:p31:0": [
+   "relational_algebra"
+  ],
+  "slides_ch2:p32:0": [
+   "join_operation",
+   "select_operation"
+  ],
+  "slides_ch3:p1:0": [
+   "sql_syntax",
+   "integrity_constraints"
+  ],
+  "slides_ch3:p2:0": [
+   "sql_syntax"
+  ],
+  "slides_ch3:p3:0": [
+   "sql_syntax",
+   "create_table"
+  ],
+  "slides_ch3:p4:0": [
+   "sql_syntax",
+   "integrity_constraints"
+  ],
+  "slides_ch3:p5:0": [
+   "create_table",
+   "sql_syntax"
+  ],
+  "slides_ch3:p6:0": [
+   "sql_syntax",
+   "integrity_constraints"
+  ],
+  "slides_ch3:p7:0": [
+   "create_table"
+  ],
+  "slides_ch3:p8:0": [
+   "integrity_constraints"
+  ],
+  "slides_ch3:p9:0": [
+   "create_table"
+  ],
+  "slides_ch3:p10:0": [
+   "sql_syntax",
+   "create_table"
+  ],
+  "slides_ch3:p11:0": [
+   "create_table"
+  ],
+  "slides_ch3:p12:0": [
+   "select_query"
+  ],
+  "slides_ch3:p13:0": [
+   "select_query",
+   "sql_syntax"
+  ],
+  "slides_ch3:p14:0": [
+   "join_operations_sql",
+   "subqueries"
+  ],
+  "slides_ch3:p15:0": [
+   "select_query",
+   "subqueries"
+  ],
+  "slides_ch3:p16:0": [
+   "select_query",
+   "subqueries"
+  ],
+  "slides_ch3:p17:0": [
+   "sql_syntax",
+   "subqueries"
+  ],
+  "slides_ch3:p18:0": [
+   "subqueries",
+   "select_query"
+  ],
+  "slides_ch3:p19:0": [
+   "sql_syntax",
+   "select_query"
+  ],
+  "slides_ch3:p20:0": [
+   "sql_syntax",
+   "join_operations_sql"
+  ],
+  "slides_ch3:p21:0": [
+   "join_operations_sql",
+   "create_table"
+  ],
+  "slides_ch3:p22:0": [
+   "sql_syntax",
+   "join_operations_sql"
+  ],
+  "slides_ch3:p23:0": [
+   "sql_syntax",
+   "join_operations_sql"
+  ],
+  "slides_ch3:p24:0": [
+   "select_query",
+   "sql_syntax"
+  ],
+  "slides_ch3:p25:0": [
+   "sql_syntax",
+   "subqueries"
+  ],
+  "slides_ch3:p26:0": [
+   "join_operations_sql",
+   "with_clause"
+  ],
+  "slides_ch3:p27:0": [
+   "join_operations_sql"
+  ],
+  "slides_ch3:p28:0": [
+   "with_clause",
+   "sql_syntax"
+  ],
+  "slides_ch3:p29:0": [
+   "with_clause",
+   "sql_syntax"
+  ],
+  "slides_ch3:p30:0": [
+   "aggregate_functions_sql"
+  ],
+  "slides_ch3:p31:0": [
+   "aggregate_functions_sql"
+  ],
+  "slides_ch3:p32:0": [
+   "aggregate_functions_sql"
+  ],
+  "slides_ch3:p33:0": [
+   "aggregate_functions_sql",
+   "select_query"
+  ],
+  "slides_ch3:p34:0": [
+   "aggregate_functions_sql"
+  ],
+  "slides_ch3:p35:0": [
+   "subqueries"
+  ],
+  "slides_ch3:p37:0": [
+   "select_query",
+   "with_clause"
+  ],
+  "slides_ch3:p38:0": [
+   "join_operations_sql",
+   "select_query"
+  ],
+  "slides_ch3:p40:0": [
+   "subqueries",
+   "sql_syntax"
+  ],
+  "slides_ch3:p41:0": [
+   "subqueries",
+   "join_operations_sql"
+  ],
+  "slides_ch3:p42:0": [
+   "subqueries",
+   "select_query"
+  ],
+  "slides_ch3:p43:0": [
+   "sql_syntax",
+   "join_operations_sql"
+  ],
+  "slides_ch3:p44:0": [
+   "subqueries",
+   "create_table"
+  ],
+  "slides_ch3:p45:0": [
+   "subqueries"
+  ],
+  "slides_ch3:p46:0": [
+   "subqueries"
+  ],
+  "slides_ch3:p47:0": [
+   "subqueries"
+  ],
+  "slides_ch3:p48:0": [
+   "subqueries"
+  ],
+  "slides_ch3:p49:0": [
+   "subqueries",
+   "select_query"
+  ],
+  "slides_ch3:p50:0": [
+   "with_clause"
+  ],
+  "slides_ch3:p51:0": [
+   "aggregate_functions_sql",
+   "select_query"
+  ],
+  "slides_ch3:p52:0": [
+   "subqueries"
+  ],
+  "slides_ch3:p53:0": [
+   "create_table"
+  ],
+  "slides_ch3:p54:0": [
+   "sql_syntax",
+   "create_table"
+  ],
+  "slides_ch3:p55:0": [
+   "sql_syntax",
+   "aggregate_functions_sql"
+  ],
+  "slides_ch3:p56:0": [
+   "sql_syntax",
+   "create_table"
+  ],
+  "slides_ch3:p57:0": [
+   "sql_syntax",
+   "join_operations_sql"
+  ],
+  "slides_ch3:p58:0": [
+   "aggregate_functions_sql",
+   "with_clause"
+  ],
+  "slides_ch3:p59:0": [
+   "sql_syntax",
+   "with_clause"
+  ],
+  "slides_ch3:p60:0": [
+   "with_clause",
+   "sql_syntax"
+  ],
+  "slides_ch3:p61:0": [
+   "subqueries",
+   "with_clause"
+  ],
+  "slides_ch3:p62:0": [
+   "select_query",
+   "sql_syntax"
+  ],
+  "slides_ch6:p1:0": [
+   "mapping_er_to_relational"
+  ],
+  "slides_ch6:p2:0": [
+   "mapping_er_to_relational"
+  ],
+  "slides_ch6:p3:0": [
+   "mapping_er_to_relational"
+  ],
+  "slides_ch6:p4:0": [
+   "mapping_er_to_relational",
+   "cardinality_constraints"
+  ],
+  "slides_ch6:p5:0": [
+   "relationship_set",
+   "aggregation"
+  ],
+  "slides_ch6:p6:0": [
+   "mapping_er_to_relational",
+   "er_diagram_notation"
+  ],
+  "slides_ch6:p7:0": [
+   "entity_set"
+  ],
+  "slides_ch6:p8:0": [
+   "er_diagram_notation"
+  ],
+  "slides_ch6:p9:0": [
+   "relationship_set"
+  ],
+  "slides_ch6:p10:0": [
+   "relationship_set"
+  ],
+  "slides_ch6:p11:0": [
+   "mapping_er_to_relational",
+   "relationship_set"
+  ],
+  "slides_ch6:p12:0": [
+   "relationship_set"
+  ],
+  "slides_ch6:p13:0": [
+   "relationship_set"
+  ],
+  "slides_ch6:p14:0": [
+   "relationship_set"
+  ],
+  "slides_ch6:p15:0": [
+   "relationship_set"
+  ],
+  "slides_ch6:p16:0": [
+   "relationship_set",
+   "er_diagram_notation"
+  ],
+  "slides_ch6:p17:0": [
+   "specialization_generalization",
+   "relationship_set"
+  ],
+  "slides_ch6:p18:0": [
+   "specialization_generalization",
+   "aggregation"
+  ],
+  "slides_ch6:p19:0": [
+   "er_diagram_notation"
+  ],
+  "slides_ch6:p20:0": [
+   "cardinality_constraints"
+  ],
+  "slides_ch6:p21:0": [
+   "cardinality_constraints"
+  ],
+  "slides_ch6:p22:0": [
+   "cardinality_constraints"
+  ],
+  "slides_ch6:p23:0": [
+   "cardinality_constraints"
+  ],
+  "slides_ch6:p24:0": [
+   "relationship_set"
+  ],
+  "slides_ch6:p25:0": [
+   "relationship_set"
+  ],
+  "slides_ch6:p26:0": [
+   "relationship_set",
+   "specialization_generalization"
+  ],
+  "slides_ch6:p27:0": [
+   "relationship_set",
+   "cardinality_constraints"
+  ],
+  "slides_ch6:p28:0": [
+   "cardinality_constraints"
+  ],
+  "slides_ch6:p29:0": [
+   "cardinality_constraints"
+  ],
+  "slides_ch6:p30:0": [
+   "weak_entity_set",
+   "relationship_set"
+  ],
+  "slides_ch6:p31:0": [
+   "entity_set",
+   "weak_entity_set"
+  ],
+  "slides_ch6:p32:0": [
+   "relationship_set"
+  ],
+  "slides_ch6:p33:0": [
+   "mapping_er_to_relational",
+   "cardinality_constraints"
+  ],
+  "slides_ch6:p34:0": [
+   "weak_entity_set"
+  ],
+  "slides_ch6:p35:0": [
+   "weak_entity_set"
+  ],
+  "slides_ch6:p36:0": [
+   "weak_entity_set"
+  ],
+  "slides_ch6:p37:0": [
+   "weak_entity_set"
+  ],
+  "slides_ch6:p38:0": [
+   "entity_set",
+   "relationship_set"
+  ],
+  "slides_ch6:p39:0": [
+   "er_diagram_notation"
+  ],
+  "slides_ch6:p40:0": [
+   "mapping_er_to_relational"
+  ],
+  "slides_ch6:p41:0": [
+   "mapping_er_to_relational",
+   "relationship_set"
+  ],
+  "slides_ch6:p42:0": [
+   "weak_entity_set"
+  ],
+  "slides_ch6:p43:0": [
+   "entity_set",
+   "specialization_generalization"
+  ],
+  "slides_ch6:p44:0": [
+   "mapping_er_to_relational",
+   "entity_set"
+  ],
+  "slides_ch6:p45:0": [
+   "relationship_set"
+  ],
+  "slides_ch6:p46:0": [
+   "relationship_set",
+   "mapping_er_to_relational"
+  ],
+  "slides_ch6:p47:0": [
+   "mapping_er_to_relational",
+   "entity_set"
+  ],
+  "slides_ch6:p48:0": [
+   "weak_entity_set",
+   "mapping_er_to_relational"
+  ],
+  "slides_ch6:p49:0": [
+   "mapping_er_to_relational",
+   "er_diagram_notation"
+  ],
+  "slides_ch6:p50:0": [
+   "specialization_generalization"
+  ],
+  "slides_ch6:p51:0": [
+   "specialization_generalization"
+  ],
+  "slides_ch6:p52:0": [
+   "mapping_er_to_relational",
+   "specialization_generalization"
+  ],
+  "slides_ch6:p53:0": [
+   "specialization_generalization"
+  ],
+  "slides_ch6:p54:0": [
+   "specialization_generalization"
+  ],
+  "slides_ch6:p55:0": [
+   "cardinality_constraints"
+  ],
+  "slides_ch6:p56:0": [
+   "er_diagram_notation",
+   "specialization_generalization"
+  ],
+  "slides_ch6:p57:0": [
+   "aggregation"
+  ],
+  "slides_ch6:p58:0": [
+   "aggregation"
+  ],
+  "slides_ch6:p59:0": [
+   "aggregation"
+  ],
+  "slides_ch6:p60:0": [
+   "mapping_er_to_relational"
+  ],
+  "slides_ch6:p62:0": [
+   "er_diagram_notation"
+  ],
+  "slides_ch6:p63:0": [
+   "er_diagram_notation"
+  ],
+  "slides_ch6:p64:0": [
+   "entity_set",
+   "weak_entity_set"
+  ],
+  "slides_ch6:p65:0": [
+   "relationship_set"
+  ],
+  "slides_ch6:p66:0": [
+   "cardinality_constraints",
+   "relationship_set"
+  ],
+  "slides_ch6:p67:0": [
+   "mapping_er_to_relational",
+   "relationship_set"
+  ],
+  "slides_ch6:p68:0": [
+   "mapping_er_to_relational",
+   "cardinality_constraints"
+  ],
+  "slides_ch6:p69:0": [
+   "aggregation",
+   "specialization_generalization"
+  ],
+  "slides_ch6:p70:0": [
+   "er_diagram_notation"
+  ],
+  "slides_ch6:p71:0": [
+   "er_diagram_notation"
+  ],
+  "slides_ch6:p72:0": [
+   "er_diagram_notation"
+  ],
+  "slides_ch6:p73:0": [
+   "er_diagram_notation"
+  ],
+  "slides_ch6:p74:0": [
+   "er_diagram_notation",
+   "mapping_er_to_relational"
+  ],
+  "slides_ch6:p75:0": [
+   "er_diagram_notation",
+   "mapping_er_to_relational"
+  ],
+  "slides_ch6:p76:0": [
+   "er_diagram_notation"
+  ],
+  "slides_ch6:p77:0": [
+   "relationship_set"
+  ],
+  "slides_ch6:p78:0": [
+   "er_diagram_notation"
+  ],
+  "slides_ch6:p79:0": [
+   "mapping_er_to_relational"
+  ],
+  "slides_ch6:p80:0": [
+   "mapping_er_to_relational",
+   "cardinality_constraints"
+  ],
+  "slides_ch7:p1:0": [
+   "boyce_codd_normal_form",
+   "third_normal_form"
+  ],
+  "slides_ch7:p2:0": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "slides_ch7:p3:0": [
+   "fourth_normal_form",
+   "functional_dependency"
+  ],
+  "slides_ch7:p4:0": [
+   "lossless_decomposition",
+   "dependency_preservation"
+  ],
+  "slides_ch7:p5:0": [
+   "lossless_decomposition"
+  ],
+  "slides_ch7:p6:0": [
+   "lossless_decomposition"
+  ],
+  "slides_ch7:p7:0": [
+   "lossless_decomposition"
+  ],
+  "slides_ch7:p8:0": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p9:0": [
+   "functional_dependency"
+  ],
+  "slides_ch7:p10:0": [
+   "functional_dependency"
+  ],
+  "slides_ch7:p11:0": [
+   "functional_dependency"
+  ],
+  "slides_ch7:p12:0": [
+   "attribute_closure"
+  ],
+  "slides_ch7:p13:0": [
+   "functional_dependency",
+   "third_normal_form"
+  ],
+  "slides_ch7:p14:0": [
+   "functional_dependency"
+  ],
+  "slides_ch7:p15:0": [
+   "functional_dependency"
+  ],
+  "slides_ch7:p16:0": [
+   "dependency_preservation",
+   "functional_dependency"
+  ],
+  "slides_ch7:p17:0": [
+   "lossless_decomposition",
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p18:0": [
+   "dependency_preservation",
+   "functional_dependency"
+  ],
+  "slides_ch7:p19:0": [
+   "dependency_preservation"
+  ],
+  "slides_ch7:p20:0": [
+   "boyce_codd_normal_form",
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p21:0": [
+   "boyce_codd_normal_form"
+  ],
+  "slides_ch7:p22:0": [
+   "boyce_codd_normal_form",
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p23:0": [
+   "dependency_preservation",
+   "lossless_decomposition"
+  ],
+  "slides_ch7:p24:0": [
+   "dependency_preservation",
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p25:0": [
+   "third_normal_form"
+  ],
+  "slides_ch7:p26:0": [
+   "third_normal_form",
+   "boyce_codd_normal_form"
+  ],
+  "slides_ch7:p27:0": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p28:0": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p29:0": [
+   "dependency_preservation",
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p30:0": [
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p31:0": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "slides_ch7:p32:0": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "slides_ch7:p33:0": [
+   "dependency_preservation",
+   "functional_dependency"
+  ],
+  "slides_ch7:p34:0": [
+   "attribute_closure"
+  ],
+  "slides_ch7:p35:0": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "slides_ch7:p36:0": [
+   "third_normal_form",
+   "functional_dependency"
+  ],
+  "slides_ch7:p37:0": [
+   "dependency_preservation",
+   "functional_dependency"
+  ],
+  "slides_ch7:p38:0": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "slides_ch7:p39:0": [
+   "attribute_closure"
+  ],
+  "slides_ch7:p40:0": [
+   "attribute_closure",
+   "functional_dependency"
+  ],
+  "slides_ch7:p41:0": [
+   "attribute_closure"
+  ],
+  "slides_ch7:p42:0": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "slides_ch7:p43:0": [
+   "functional_dependency"
+  ],
+  "slides_ch7:p44:0": [
+   "functional_dependency"
+  ],
+  "slides_ch7:p45:0": [
+   "functional_dependency"
+  ],
+  "slides_ch7:p46:0": [
+   "functional_dependency"
+  ],
+  "slides_ch7:p47:0": [
+   "attribute_closure",
+   "functional_dependency"
+  ],
+  "slides_ch7:p48:0": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "slides_ch7:p49:0": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "slides_ch7:p50:0": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "slides_ch7:p51:0": [
+   "dependency_preservation"
+  ],
+  "slides_ch7:p52:0": [
+   "dependency_preservation"
+  ],
+  "slides_ch7:p53:0": [
+   "dependency_preservation"
+  ],
+  "slides_ch7:p54:0": [
+   "fourth_normal_form",
+   "dependency_preservation"
+  ],
+  "slides_ch7:p55:0": [
+   "fourth_normal_form",
+   "boyce_codd_normal_form"
+  ],
+  "slides_ch7:p56:0": [
+   "dependency_preservation",
+   "functional_dependency"
+  ],
+  "slides_ch7:p57:0": [
+   "dependency_preservation",
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p58:0": [
+   "boyce_codd_normal_form",
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p59:0": [
+   "boyce_codd_normal_form",
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p60:0": [
+   "third_normal_form",
+   "boyce_codd_normal_form"
+  ],
+  "slides_ch7:p61:0": [
+   "third_normal_form"
+  ],
+  "slides_ch7:p62:0": [
+   "third_normal_form"
+  ],
+  "slides_ch7:p63:0": [
+   "third_normal_form",
+   "dependency_preservation"
+  ],
+  "slides_ch7:p64:0": [
+   "third_normal_form"
+  ],
+  "slides_ch7:p65:0": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p66:0": [
+   "third_normal_form",
+   "boyce_codd_normal_form"
+  ],
+  "slides_ch7:p67:0": [
+   "fourth_normal_form",
+   "lossless_decomposition"
+  ],
+  "slides_ch7:p68:0": [
+   "fourth_normal_form",
+   "dependency_preservation"
+  ],
+  "slides_ch7:p69:0": [
+   "multivalued_dependency",
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p70:0": [
+   "multivalued_dependency",
+   "functional_dependency"
+  ],
+  "slides_ch7:p71:0": [
+   "multivalued_dependency",
+   "boyce_codd_normal_form"
+  ],
+  "slides_ch7:p72:0": [
+   "functional_dependency",
+   "multivalued_dependency"
+  ],
+  "slides_ch7:p73:0": [
+   "functional_dependency",
+   "third_normal_form"
+  ],
+  "slides_ch7:p74:0": [
+   "multivalued_dependency",
+   "functional_dependency"
+  ],
+  "slides_ch7:p75:0": [
+   "multivalued_dependency"
+  ],
+  "slides_ch7:p76:0": [
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p77:0": [
+   "multivalued_dependency",
+   "functional_dependency"
+  ],
+  "slides_ch7:p78:0": [
+   "fourth_normal_form",
+   "dependency_preservation"
+  ],
+  "slides_ch7:p79:0": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "slides_ch7:p80:0": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "slides_ch7:p81:0": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p82:0": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p83:0": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "slides_ch7:p84:0": [
+   "fourth_normal_form",
+   "boyce_codd_normal_form"
+  ],
+  "slides_ch7:p85:0": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "slides_ch7:p86:0": [
+   "functional_dependency",
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p87:0": [
+   "lossless_decomposition",
+   "fourth_normal_form"
+  ],
+  "slides_ch7:p88:0": [
+   "third_normal_form"
+  ],
+  "slides_ch7:p89:0": [
+   "third_normal_form"
+  ],
+  "slides_ch7:p90:0": [
+   "third_normal_form"
+  ],
+  "slides_ch7:p91:0": [
+   "third_normal_form"
+  ],
+  "slides_ch7:p92:0": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "slides_ch7:p93:0": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_OWX4RvijwLw:t10": [
+   "schema_and_instance",
+   "database_system"
+  ],
+  "video_OWX4RvijwLw:t65": [
+   "data_model"
+  ],
+  "video_OWX4RvijwLw:t143": [
+   "schema_and_instance",
+   "data_model"
+  ],
+  "video_OWX4RvijwLw:t214": [
+   "schema_and_instance",
+   "data_model"
+  ],
+  "video_OWX4RvijwLw:t281": [
+   "schema_and_instance",
+   "data_model"
+  ],
+  "video_OWX4RvijwLw:t357": [
+   "schema_and_instance"
+  ],
+  "video_OWX4RvijwLw:t420": [
+   "schema_and_instance"
+  ],
+  "video_OWX4RvijwLw:t496": [
+   "schema_and_instance"
+  ],
+  "video_OWX4RvijwLw:t563": [
+   "schema_and_instance"
+  ],
+  "video_OWX4RvijwLw:t613": [
+   "schema_and_instance"
+  ],
+  "video_OWX4RvijwLw:t690": [
+   "schema_and_instance"
+  ],
+  "video_OWX4RvijwLw:t739": [
+   "schema_and_instance"
+  ],
+  "video_OWX4RvijwLw:t818": [
+   "schema_and_instance",
+   "data_model"
+  ],
+  "video_OWX4RvijwLw:t897": [
+   "transaction_management",
+   "schema_and_instance"
+  ],
+  "video_OWX4RvijwLw:t950": [
+   "relational_model",
+   "data_model"
+  ],
+  "video_OWX4RvijwLw:t1031": [
+   "schema_and_instance",
+   "relational_model"
+  ],
+  "video_OWX4RvijwLw:t1110": [
+   "relational_model",
+   "schema_and_instance"
+  ],
+  "video_OWX4RvijwLw:t1186": [
+   "relational_model",
+   "schema_and_instance"
+  ],
+  "video_OWX4RvijwLw:t1239": [
+   "sql_language"
+  ],
+  "video_OWX4RvijwLw:t1310": [
+   "schema_and_instance",
+   "sql_language"
+  ],
+  "video_OWX4RvijwLw:t1386": [
+   "sql_language"
+  ],
+  "video_OWX4RvijwLw:t1460": [
+   "sql_language"
+  ],
+  "video_OWX4RvijwLw:t1517": [
+   "sql_language"
+  ],
+  "video_OWX4RvijwLw:t1584": [
+   "schema_and_instance"
+  ],
+  "video_OWX4RvijwLw:t1635": [
+   "schema_and_instance",
+   "data_model"
+  ],
+  "video_OWX4RvijwLw:t1713": [
+   "sql_language"
+  ],
+  "video_rrG7azSlyWI:t10": [
+   "data_model",
+   "schema_and_instance"
+  ],
+  "video_rrG7azSlyWI:t80": [
+   "schema_and_instance",
+   "transaction_management"
+  ],
+  "video_rrG7azSlyWI:t158": [
+   "schema_and_instance",
+   "transaction_management"
+  ],
+  "video_rrG7azSlyWI:t239": [
+   "relational_model",
+   "schema_and_instance"
+  ],
+  "video_rrG7azSlyWI:t319": [
+   "data_model",
+   "relational_model"
+  ],
+  "video_rrG7azSlyWI:t394": [
+   "relational_model",
+   "data_model"
+  ],
+  "video_rrG7azSlyWI:t472": [
+   "sql_language",
+   "schema_and_instance"
+  ],
+  "video_rrG7azSlyWI:t539": [
+   "sql_language",
+   "schema_and_instance"
+  ],
+  "video_rrG7azSlyWI:t593": [
+   "storage_manager"
+  ],
+  "video_rrG7azSlyWI:t671": [
+   "schema_and_instance",
+   "database_system"
+  ],
+  "video_rrG7azSlyWI:t753": [
+   "query_processor",
+   "sql_language"
+  ],
+  "video_rrG7azSlyWI:t810": [
+   "query_processor",
+   "sql_language"
+  ],
+  "video_rrG7azSlyWI:t887": [
+   "query_processor"
+  ],
+  "video_rrG7azSlyWI:t971": [
+   "transaction_management",
+   "query_processor"
+  ],
+  "video_rrG7azSlyWI:t1052": [
+   "transaction_management",
+   "database_system"
+  ],
+  "video_rrG7azSlyWI:t1106": [
+   "transaction_management"
+  ],
+  "video_rrG7azSlyWI:t1165": [
+   "transaction_management"
+  ],
+  "video_rrG7azSlyWI:t1213": [
+   "transaction_management"
+  ],
+  "video_rrG7azSlyWI:t1289": [
+   "database_system",
+   "query_processor"
+  ],
+  "video_rrG7azSlyWI:t1366": [
+   "schema_and_instance",
+   "query_processor"
+  ],
+  "video_rrG7azSlyWI:t1445": [
+   "query_processor",
+   "database_system"
+  ],
+  "video_rrG7azSlyWI:t1519": [
+   "query_processor"
+  ],
+  "video_rrG7azSlyWI:t1597": [
+   "storage_manager"
+  ],
+  "video_rrG7azSlyWI:t1677": [
+   "schema_and_instance",
+   "database_system"
+  ],
+  "video_rrG7azSlyWI:t1747": [
+   "database_system",
+   "schema_and_instance"
+  ],
+  "video_rrG7azSlyWI:t1827": [
+   "relational_model"
+  ],
+  "video_rrG7azSlyWI:t1888": [
+   "data_model",
+   "relational_model"
+  ],
+  "video_DRSog3SA4-Y:t10": [
+   "schema_diagram",
+   "relation"
+  ],
+  "video_DRSog3SA4-Y:t82": [
+   "relation"
+  ],
+  "video_DRSog3SA4-Y:t151": [
+   "attribute"
+  ],
+  "video_DRSog3SA4-Y:t231": [
+   "attribute"
+  ],
+  "video_DRSog3SA4-Y:t282": [
+   "attribute"
+  ],
+  "video_DRSog3SA4-Y:t364": [
+   "attribute"
+  ],
+  "video_DRSog3SA4-Y:t427": [
+   "attribute"
+  ],
+  "video_DRSog3SA4-Y:t479": [
+   "attribute",
+   "schema_diagram"
+  ],
+  "video_DRSog3SA4-Y:t526": [
+   "attribute",
+   "relation"
+  ],
+  "video_DRSog3SA4-Y:t601": [
+   "relation"
+  ],
+  "video_DRSog3SA4-Y:t683": [
+   "attribute",
+   "schema_diagram"
+  ],
+  "video_DRSog3SA4-Y:t764": [
+   "relation",
+   "attribute"
+  ],
+  "video_DRSog3SA4-Y:t829": [
+   "key",
+   "relation"
+  ],
+  "video_DRSog3SA4-Y:t913": [
+   "key"
+  ],
+  "video_DRSog3SA4-Y:t973": [
+   "key"
+  ],
+  "video_DRSog3SA4-Y:t1050": [
+   "key"
+  ],
+  "video_DRSog3SA4-Y:t1131": [
+   "key"
+  ],
+  "video_DRSog3SA4-Y:t1198": [
+   "key"
+  ],
+  "video_DRSog3SA4-Y:t1276": [
+   "key"
+  ],
+  "video_DRSog3SA4-Y:t1326": [
+   "key",
+   "attribute"
+  ],
+  "video_DRSog3SA4-Y:t1377": [
+   "key"
+  ],
+  "video_DRSog3SA4-Y:t1453": [
+   "key"
+  ],
+  "video_DRSog3SA4-Y:t1528": [
+   "key",
+   "relation"
+  ],
+  "video_DRSog3SA4-Y:t1607": [
+   "key",
+   "schema_diagram"
+  ],
+  "video_DRSog3SA4-Y:t1688": [
+   "schema_diagram",
+   "key"
+  ],
+  "video_DRSog3SA4-Y:t1766": [
+   "relational_algebra"
+  ],
+  "video_DRSog3SA4-Y:t1834": [
+   "relational_algebra"
+  ],
+  "video_DRSog3SA4-Y:t1886": [
+   "relational_algebra",
+   "select_operation"
+  ],
+  "video_DRSog3SA4-Y:t1958": [
+   "relational_algebra"
+  ],
+  "video_UodHyVywy5c:t10": [
+   "relational_algebra",
+   "schema_diagram"
+  ],
+  "video_UodHyVywy5c:t60": [
+   "relational_algebra",
+   "relation"
+  ],
+  "video_UodHyVywy5c:t123": [
+   "attribute",
+   "join_operation"
+  ],
+  "video_UodHyVywy5c:t200": [
+   "select_operation"
+  ],
+  "video_UodHyVywy5c:t281": [
+   "select_operation"
+  ],
+  "video_UodHyVywy5c:t352": [
+   "select_operation"
+  ],
+  "video_UodHyVywy5c:t432": [
+   "relation",
+   "attribute"
+  ],
+  "video_UodHyVywy5c:t513": [
+   "relational_algebra",
+   "relation"
+  ],
+  "video_UodHyVywy5c:t587": [
+   "relation",
+   "join_operation"
+  ],
+  "video_UodHyVywy5c:t653": [
+   "join_operation",
+   "select_operation"
+  ],
+  "video_UodHyVywy5c:t731": [
+   "relational_algebra",
+   "join_operation"
+  ],
+  "video_UodHyVywy5c:t810": [
+   "relational_algebra",
+   "join_operation"
+  ],
+  "video_UodHyVywy5c:t889": [
+   "join_operation",
+   "relation"
+  ],
+  "video_UodHyVywy5c:t942": [
+   "relational_algebra"
+  ],
+  "video_UodHyVywy5c:t1011": [
+   "relational_algebra",
+   "join_operation"
+  ],
+  "video_UodHyVywy5c:t1066": [
+   "join_operation"
+  ],
+  "video_UodHyVywy5c:t1149": [
+   "join_operation",
+   "relation"
+  ],
+  "video_UodHyVywy5c:t1225": [
+   "join_operation",
+   "attribute"
+  ],
+  "video_UodHyVywy5c:t1301": [
+   "join_operation"
+  ],
+  "video_UodHyVywy5c:t1385": [
+   "relational_algebra",
+   "join_operation"
+  ],
+  "video_UodHyVywy5c:t1453": [
+   "aggregate_function"
+  ],
+  "video_UodHyVywy5c:t1517": [
+   "relational_algebra"
+  ],
+  "video_UodHyVywy5c:t1596": [
+   "relational_algebra"
+  ],
+  "video_UodHyVywy5c:t1673": [
+   "join_operation",
+   "relational_algebra"
+  ],
+  "video_iHrvzgQxybY:t10": [
+   "relational_algebra"
+  ],
+  "video_iHrvzgQxybY:t63": [
+   "relational_algebra"
+  ],
+  "video_iHrvzgQxybY:t139": [
+   "relational_algebra"
+  ],
+  "video_iHrvzgQxybY:t214": [
+   "select_operation"
+  ],
+  "video_iHrvzgQxybY:t261": [
+   "select_operation",
+   "relational_algebra"
+  ],
+  "video_iHrvzgQxybY:t338": [
+   "relational_algebra",
+   "relation"
+  ],
+  "video_iHrvzgQxybY:t399": [
+   "join_operation",
+   "relational_algebra"
+  ],
+  "video_iHrvzgQxybY:t480": [
+   "relational_algebra"
+  ],
+  "video_iHrvzgQxybY:t534": [
+   "join_operation",
+   "relational_algebra"
+  ],
+  "video_iHrvzgQxybY:t592": [
+   "select_operation",
+   "join_operation"
+  ],
+  "video_iHrvzgQxybY:t652": [
+   "relation",
+   "join_operation"
+  ],
+  "video_iHrvzgQxybY:t708": [
+   "join_operation",
+   "relation"
+  ],
+  "video_iHrvzgQxybY:t784": [
+   "join_operation"
+  ],
+  "video_iHrvzgQxybY:t837": [
+   "relational_algebra"
+  ],
+  "video_iHrvzgQxybY:t884": [
+   "relation",
+   "join_operation"
+  ],
+  "video_iHrvzgQxybY:t936": [
+   "relation",
+   "join_operation"
+  ],
+  "video_iHrvzgQxybY:t988": [
+   "join_operation",
+   "relational_algebra"
+  ],
+  "video_iHrvzgQxybY:t1061": [
+   "relation",
+   "relational_algebra"
+  ],
+  "video_iHrvzgQxybY:t1123": [
+   "relation"
+  ],
+  "video_iHrvzgQxybY:t1180": [
+   "aggregate_function",
+   "join_operation"
+  ],
+  "video_iHrvzgQxybY:t1235": [
+   "relational_algebra"
+  ],
+  "video_iHrvzgQxybY:t1292": [
+   "relational_algebra"
+  ],
+  "video_iHrvzgQxybY:t1363": [
+   "relational_algebra",
+   "select_operation"
+  ],
+  "video_iHrvzgQxybY:t1418": [
+   "relational_algebra",
+   "relation"
+  ],
+  "video_iHrvzgQxybY:t1481": [
+   "relational_algebra",
+   "select_operation"
+  ],
+  "video_iHrvzgQxybY:t1560": [
+   "relational_algebra",
+   "relation"
+  ],
+  "video_iHrvzgQxybY:t1616": [
+   "relational_algebra"
+  ],
+  "video_iHrvzgQxybY:t1697": [
+   "relational_algebra",
+   "relation"
+  ],
+  "video_iHrvzgQxybY:t1764": [
+   "relational_algebra",
+   "relation"
+  ],
+  "video_iHrvzgQxybY:t1833": [
+   "relation",
+   "relational_algebra"
+  ],
+  "video_iHrvzgQxybY:t1904": [
+   "join_operation",
+   "relational_algebra"
+  ],
+  "video_iHrvzgQxybY:t1960": [
+   "relational_algebra"
+  ],
+  "video_w1XdPholzWY:t10": [
+   "sql_syntax",
+   "select_query"
+  ],
+  "video_w1XdPholzWY:t88": [
+   "sql_syntax"
+  ],
+  "video_w1XdPholzWY:t154": [
+   "sql_syntax"
+  ],
+  "video_w1XdPholzWY:t230": [
+   "sql_syntax",
+   "create_table"
+  ],
+  "video_w1XdPholzWY:t308": [
+   "integrity_constraints",
+   "sql_syntax"
+  ],
+  "video_w1XdPholzWY:t377": [
+   "create_table"
+  ],
+  "video_w1XdPholzWY:t445": [
+   "create_table"
+  ],
+  "video_w1XdPholzWY:t505": [
+   "integrity_constraints"
+  ],
+  "video_w1XdPholzWY:t581": [
+   "integrity_constraints",
+   "sql_syntax"
+  ],
+  "video_w1XdPholzWY:t661": [
+   "integrity_constraints"
+  ],
+  "video_w1XdPholzWY:t726": [
+   "create_table",
+   "integrity_constraints"
+  ],
+  "video_w1XdPholzWY:t803": [
+   "integrity_constraints",
+   "create_table"
+  ],
+  "video_w1XdPholzWY:t850": [
+   "create_table"
+  ],
+  "video_w1XdPholzWY:t904": [
+   "create_table"
+  ],
+  "video_w1XdPholzWY:t986": [
+   "select_query"
+  ],
+  "video_w1XdPholzWY:t1062": [
+   "select_query",
+   "sql_syntax"
+  ],
+  "video_w1XdPholzWY:t1140": [
+   "select_query",
+   "sql_syntax"
+  ],
+  "video_w1XdPholzWY:t1189": [
+   "join_operations_sql",
+   "create_table"
+  ],
+  "video_w1XdPholzWY:t1265": [
+   "select_query",
+   "join_operations_sql"
+  ],
+  "video_w1XdPholzWY:t1323": [
+   "subqueries",
+   "select_query"
+  ],
+  "video_w1XdPholzWY:t1395": [
+   "sql_syntax",
+   "select_query"
+  ],
+  "video_w1XdPholzWY:t1460": [
+   "subqueries",
+   "sql_syntax"
+  ],
+  "video_w1XdPholzWY:t1516": [
+   "sql_syntax"
+  ],
+  "video_w1XdPholzWY:t1591": [
+   "create_table",
+   "sql_syntax"
+  ],
+  "video_w1XdPholzWY:t1656": [
+   "create_table",
+   "sql_syntax"
+  ],
+  "video_w1XdPholzWY:t1725": [
+   "sql_syntax",
+   "select_query"
+  ],
+  "video_ywUn5qNmxNo:t10": [
+   "sql_syntax",
+   "select_query"
+  ],
+  "video_ywUn5qNmxNo:t65": [
+   "select_query",
+   "join_operations_sql"
+  ],
+  "video_ywUn5qNmxNo:t140": [
+   "create_table",
+   "sql_syntax"
+  ],
+  "video_ywUn5qNmxNo:t216": [
+   "subqueries",
+   "sql_syntax"
+  ],
+  "video_ywUn5qNmxNo:t293": [
+   "join_operations_sql",
+   "create_table"
+  ],
+  "video_ywUn5qNmxNo:t356": [
+   "create_table",
+   "join_operations_sql"
+  ],
+  "video_ywUn5qNmxNo:t435": [
+   "sql_syntax"
+  ],
+  "video_ywUn5qNmxNo:t515": [
+   "with_clause"
+  ],
+  "video_ywUn5qNmxNo:t568": [
+   "sql_syntax",
+   "with_clause"
+  ],
+  "video_ywUn5qNmxNo:t644": [
+   "join_operations_sql",
+   "subqueries"
+  ],
+  "video_ywUn5qNmxNo:t722": [
+   "join_operations_sql"
+  ],
+  "video_ywUn5qNmxNo:t792": [
+   "join_operations_sql",
+   "create_table"
+  ],
+  "video_ywUn5qNmxNo:t878": [
+   "join_operations_sql",
+   "sql_syntax"
+  ],
+  "video_ywUn5qNmxNo:t962": [
+   "with_clause",
+   "subqueries"
+  ],
+  "video_ywUn5qNmxNo:t1020": [
+   "aggregate_functions_sql",
+   "integrity_constraints"
+  ],
+  "video_ywUn5qNmxNo:t1099": [
+   "join_operations_sql"
+  ],
+  "video_ywUn5qNmxNo:t1182": [
+   "with_clause",
+   "integrity_constraints"
+  ],
+  "video_ywUn5qNmxNo:t1254": [
+   "sql_syntax",
+   "integrity_constraints"
+  ],
+  "video_ywUn5qNmxNo:t1307": [
+   "integrity_constraints"
+  ],
+  "video_ywUn5qNmxNo:t1375": [
+   "aggregate_functions_sql"
+  ],
+  "video_ywUn5qNmxNo:t1456": [
+   "sql_syntax",
+   "aggregate_functions_sql"
+  ],
+  "video_ywUn5qNmxNo:t1532": [
+   "aggregate_functions_sql"
+  ],
+  "video_ywUn5qNmxNo:t1613": [
+   "aggregate_functions_sql",
+   "sql_syntax"
+  ],
+  "video_ywUn5qNmxNo:t1658": [
+   "aggregate_functions_sql"
+  ],
+  "video_ywUn5qNmxNo:t1737": [
+   "aggregate_functions_sql"
+  ],
+  "video_ywUn5qNmxNo:t1791": [
+   "aggregate_functions_sql",
+   "select_query"
+  ],
+  "video_ywUn5qNmxNo:t1873": [
+   "select_query",
+   "subqueries"
+  ],
+  "video_ywUn5qNmxNo:t1933": [
+   "select_query",
+   "aggregate_functions_sql"
+  ],
+  "video_fsDBUDKC_iM:t10": [
+   "subqueries",
+   "sql_syntax"
+  ],
+  "video_fsDBUDKC_iM:t64": [
+   "subqueries"
+  ],
+  "video_fsDBUDKC_iM:t147": [
+   "subqueries"
+  ],
+  "video_fsDBUDKC_iM:t197": [
+   "subqueries",
+   "with_clause"
+  ],
+  "video_fsDBUDKC_iM:t245": [
+   "select_query",
+   "subqueries"
+  ],
+  "video_fsDBUDKC_iM:t324": [
+   "create_table",
+   "select_query"
+  ],
+  "video_fsDBUDKC_iM:t403": [
+   "subqueries"
+  ],
+  "video_fsDBUDKC_iM:t463": [
+   "select_query",
+   "subqueries"
+  ],
+  "video_fsDBUDKC_iM:t542": [
+   "subqueries"
+  ],
+  "video_fsDBUDKC_iM:t599": [
+   "sql_syntax",
+   "subqueries"
+  ],
+  "video_fsDBUDKC_iM:t651": [
+   "integrity_constraints",
+   "subqueries"
+  ],
+  "video_fsDBUDKC_iM:t736": [
+   "subqueries"
+  ],
+  "video_fsDBUDKC_iM:t784": [
+   "integrity_constraints",
+   "subqueries"
+  ],
+  "video_fsDBUDKC_iM:t836": [
+   "subqueries"
+  ],
+  "video_fsDBUDKC_iM:t899": [
+   "select_query",
+   "subqueries"
+  ],
+  "video_fsDBUDKC_iM:t951": [
+   "subqueries"
+  ],
+  "video_fsDBUDKC_iM:t1007": [
+   "with_clause"
+  ],
+  "video_fsDBUDKC_iM:t1083": [
+   "create_table",
+   "subqueries"
+  ],
+  "video_fsDBUDKC_iM:t1143": [
+   "subqueries",
+   "select_query"
+  ],
+  "video_fsDBUDKC_iM:t1220": [
+   "subqueries",
+   "select_query"
+  ],
+  "video_fsDBUDKC_iM:t1272": [
+   "subqueries"
+  ],
+  "video_fsDBUDKC_iM:t1332": [
+   "subqueries",
+   "select_query"
+  ],
+  "video_fsDBUDKC_iM:t1393": [
+   "subqueries",
+   "select_query"
+  ],
+  "video_fsDBUDKC_iM:t1470": [
+   "select_query",
+   "aggregate_functions_sql"
+  ],
+  "video_fsDBUDKC_iM:t1521": [
+   "select_query",
+   "join_operations_sql"
+  ],
+  "video_fsDBUDKC_iM:t1591": [
+   "create_table"
+  ],
+  "video_fsDBUDKC_iM:t1667": [
+   "sql_syntax",
+   "subqueries"
+  ],
+  "video_fsDBUDKC_iM:t1741": [
+   "create_table",
+   "join_operations_sql"
+  ],
+  "video_fsDBUDKC_iM:t1797": [
+   "sql_syntax",
+   "with_clause"
+  ],
+  "video_fsDBUDKC_iM:t1845": [
+   "subqueries"
+  ],
+  "video_cx7rBTS2dBM:t10": [
+   "mapping_er_to_relational"
+  ],
+  "video_cx7rBTS2dBM:t73": [
+   "mapping_er_to_relational"
+  ],
+  "video_cx7rBTS2dBM:t149": [
+   "mapping_er_to_relational"
+  ],
+  "video_cx7rBTS2dBM:t219": [
+   "mapping_er_to_relational"
+  ],
+  "video_cx7rBTS2dBM:t296": [
+   "specialization_generalization",
+   "mapping_er_to_relational"
+  ],
+  "video_cx7rBTS2dBM:t346": [
+   "relationship_set"
+  ],
+  "video_cx7rBTS2dBM:t395": [
+   "mapping_er_to_relational",
+   "specialization_generalization"
+  ],
+  "video_cx7rBTS2dBM:t451": [
+   "relationship_set",
+   "entity_set"
+  ],
+  "video_cx7rBTS2dBM:t516": [
+   "entity_set",
+   "mapping_er_to_relational"
+  ],
+  "video_cx7rBTS2dBM:t595": [
+   "relationship_set",
+   "entity_set"
+  ],
+  "video_cx7rBTS2dBM:t656": [
+   "relationship_set"
+  ],
+  "video_cx7rBTS2dBM:t715": [
+   "relationship_set"
+  ],
+  "video_cx7rBTS2dBM:t791": [
+   "cardinality_constraints",
+   "relationship_set"
+  ],
+  "video_cx7rBTS2dBM:t851": [
+   "cardinality_constraints"
+  ],
+  "video_cx7rBTS2dBM:t899": [
+   "relationship_set",
+   "entity_set"
+  ],
+  "video_cx7rBTS2dBM:t960": [
+   "relationship_set",
+   "cardinality_constraints"
+  ],
+  "video_cx7rBTS2dBM:t1010": [
+   "specialization_generalization",
+   "entity_set"
+  ],
+  "video_cx7rBTS2dBM:t1082": [
+   "specialization_generalization"
+  ],
+  "video_cx7rBTS2dBM:t1129": [
+   "relationship_set",
+   "weak_entity_set"
+  ],
+  "video_cx7rBTS2dBM:t1184": [
+   "entity_set",
+   "relationship_set"
+  ],
+  "video_cx7rBTS2dBM:t1244": [
+   "weak_entity_set"
+  ],
+  "video_cx7rBTS2dBM:t1297": [
+   "mapping_er_to_relational",
+   "relationship_set"
+  ],
+  "video_cx7rBTS2dBM:t1377": [
+   "weak_entity_set",
+   "relationship_set"
+  ],
+  "video_cx7rBTS2dBM:t1460": [
+   "weak_entity_set"
+  ],
+  "video_cx7rBTS2dBM:t1513": [
+   "weak_entity_set"
+  ],
+  "video_cx7rBTS2dBM:t1575": [
+   "weak_entity_set"
+  ],
+  "video_cx7rBTS2dBM:t1655": [
+   "mapping_er_to_relational",
+   "weak_entity_set"
+  ],
+  "video_cx7rBTS2dBM:t1733": [
+   "mapping_er_to_relational"
+  ],
+  "video_pm_Tr3eZAac:t16": [
+   "mapping_er_to_relational",
+   "er_diagram_notation"
+  ],
+  "video_pm_Tr3eZAac:t68": [
+   "er_diagram_notation"
+  ],
+  "video_pm_Tr3eZAac:t120": [
+   "relationship_set"
+  ],
+  "video_pm_Tr3eZAac:t168": [
+   "relationship_set"
+  ],
+  "video_pm_Tr3eZAac:t216": [
+   "cardinality_constraints",
+   "mapping_er_to_relational"
+  ],
+  "video_pm_Tr3eZAac:t268": [
+   "relationship_set",
+   "cardinality_constraints"
+  ],
+  "video_pm_Tr3eZAac:t323": [
+   "cardinality_constraints",
+   "er_diagram_notation"
+  ],
+  "video_pm_Tr3eZAac:t369": [
+   "relationship_set"
+  ],
+  "video_pm_Tr3eZAac:t423": [
+   "specialization_generalization",
+   "cardinality_constraints"
+  ],
+  "video_pm_Tr3eZAac:t472": [
+   "relationship_set",
+   "cardinality_constraints"
+  ],
+  "video_pm_Tr3eZAac:t531": [
+   "er_diagram_notation",
+   "relationship_set"
+  ],
+  "video_pm_Tr3eZAac:t584": [
+   "cardinality_constraints"
+  ],
+  "video_pm_Tr3eZAac:t638": [
+   "cardinality_constraints"
+  ],
+  "video_pm_Tr3eZAac:t683": [
+   "cardinality_constraints"
+  ],
+  "video_pm_Tr3eZAac:t737": [
+   "er_diagram_notation",
+   "specialization_generalization"
+  ],
+  "video_pm_Tr3eZAac:t792": [
+   "weak_entity_set"
+  ],
+  "video_pm_Tr3eZAac:t838": [
+   "weak_entity_set"
+  ],
+  "video_pm_Tr3eZAac:t886": [
+   "weak_entity_set"
+  ],
+  "video_pm_Tr3eZAac:t936": [
+   "weak_entity_set"
+  ],
+  "video_pm_Tr3eZAac:t989": [
+   "mapping_er_to_relational",
+   "relationship_set"
+  ],
+  "video_pm_Tr3eZAac:t1038": [
+   "specialization_generalization",
+   "mapping_er_to_relational"
+  ],
+  "video_pm_Tr3eZAac:t1091": [
+   "mapping_er_to_relational"
+  ],
+  "video_pm_Tr3eZAac:t1143": [
+   "weak_entity_set"
+  ],
+  "video_pm_Tr3eZAac:t1197": [
+   "mapping_er_to_relational"
+  ],
+  "video_pm_Tr3eZAac:t1249": [
+   "mapping_er_to_relational",
+   "relationship_set"
+  ],
+  "video_pm_Tr3eZAac:t1306": [
+   "relationship_set",
+   "mapping_er_to_relational"
+  ],
+  "video_pm_Tr3eZAac:t1356": [
+   "entity_set",
+   "er_diagram_notation"
+  ],
+  "video_pm_Tr3eZAac:t1415": [
+   "specialization_generalization",
+   "aggregation"
+  ],
+  "video_pm_Tr3eZAac:t1463": [
+   "specialization_generalization",
+   "entity_set"
+  ],
+  "video_pm_Tr3eZAac:t1519": [
+   "mapping_er_to_relational",
+   "specialization_generalization"
+  ],
+  "video_pm_Tr3eZAac:t1568": [
+   "relationship_set",
+   "specialization_generalization"
+  ],
+  "video_pm_Tr3eZAac:t1620": [
+   "mapping_er_to_relational",
+   "relationship_set"
+  ],
+  "video_pm_Tr3eZAac:t1668": [
+   "cardinality_constraints",
+   "specialization_generalization"
+  ],
+  "video_pm_Tr3eZAac:t1713": [
+   "weak_entity_set"
+  ],
+  "video_pm_Tr3eZAac:t1767": [
+   "mapping_er_to_relational"
+  ],
+  "video_LMAELfNAGF4:t12": [
+   "mapping_er_to_relational"
+  ],
+  "video_LMAELfNAGF4:t75": [
+   "relationship_set",
+   "entity_set"
+  ],
+  "video_LMAELfNAGF4:t126": [
+   "mapping_er_to_relational",
+   "relationship_set"
+  ],
+  "video_LMAELfNAGF4:t179": [
+   "cardinality_constraints"
+  ],
+  "video_LMAELfNAGF4:t237": [
+   "cardinality_constraints"
+  ],
+  "video_LMAELfNAGF4:t313": [
+   "cardinality_constraints",
+   "relationship_set"
+  ],
+  "video_LMAELfNAGF4:t375": [
+   "specialization_generalization"
+  ],
+  "video_LMAELfNAGF4:t424": [
+   "specialization_generalization",
+   "weak_entity_set"
+  ],
+  "video_LMAELfNAGF4:t478": [
+   "specialization_generalization",
+   "er_diagram_notation"
+  ],
+  "video_LMAELfNAGF4:t532": [
+   "specialization_generalization",
+   "entity_set"
+  ],
+  "video_LMAELfNAGF4:t608": [
+   "specialization_generalization"
+  ],
+  "video_LMAELfNAGF4:t691": [
+   "specialization_generalization",
+   "mapping_er_to_relational"
+  ],
+  "video_LMAELfNAGF4:t773": [
+   "mapping_er_to_relational",
+   "specialization_generalization"
+  ],
+  "video_LMAELfNAGF4:t831": [
+   "specialization_generalization"
+  ],
+  "video_LMAELfNAGF4:t884": [
+   "entity_set"
+  ],
+  "video_LMAELfNAGF4:t947": [
+   "specialization_generalization"
+  ],
+  "video_LMAELfNAGF4:t1007": [
+   "specialization_generalization"
+  ],
+  "video_LMAELfNAGF4:t1056": [
+   "weak_entity_set",
+   "specialization_generalization"
+  ],
+  "video_LMAELfNAGF4:t1120": [
+   "specialization_generalization"
+  ],
+  "video_LMAELfNAGF4:t1189": [
+   "aggregation"
+  ],
+  "video_LMAELfNAGF4:t1240": [
+   "mapping_er_to_relational",
+   "relationship_set"
+  ],
+  "video_LMAELfNAGF4:t1299": [
+   "aggregation"
+  ],
+  "video_LMAELfNAGF4:t1380": [
+   "relationship_set",
+   "entity_set"
+  ],
+  "video_LMAELfNAGF4:t1437": [
+   "mapping_er_to_relational",
+   "aggregation"
+  ],
+  "video_LMAELfNAGF4:t1519": [
+   "mapping_er_to_relational"
+  ],
+  "video_LMAELfNAGF4:t1575": [
+   "specialization_generalization",
+   "weak_entity_set"
+  ],
+  "video_LMAELfNAGF4:t1642": [
+   "relationship_set",
+   "mapping_er_to_relational"
+  ],
+  "video_LMAELfNAGF4:t1701": [
+   "cardinality_constraints"
+  ],
+  "video_LMAELfNAGF4:t1779": [
+   "mapping_er_to_relational",
+   "cardinality_constraints"
+  ],
+  "video_LMAELfNAGF4:t1862": [
+   "cardinality_constraints",
+   "weak_entity_set"
+  ],
+  "video_LMAELfNAGF4:t1926": [
+   "mapping_er_to_relational",
+   "er_diagram_notation"
+  ],
+  "video_LMAELfNAGF4:t1979": [
+   "weak_entity_set",
+   "specialization_generalization"
+  ],
+  "video_LMAELfNAGF4:t2036": [
+   "er_diagram_notation"
+  ],
+  "video_LMAELfNAGF4:t2101": [
+   "er_diagram_notation"
+  ],
+  "video_K5jqNjnE-pE:t12": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_K5jqNjnE-pE:t58": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_K5jqNjnE-pE:t104": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_K5jqNjnE-pE:t174": [
+   "fourth_normal_form",
+   "functional_dependency"
+  ],
+  "video_K5jqNjnE-pE:t252": [
+   "functional_dependency",
+   "fourth_normal_form"
+  ],
+  "video_K5jqNjnE-pE:t329": [
+   "fourth_normal_form",
+   "functional_dependency"
+  ],
+  "video_K5jqNjnE-pE:t411": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "video_K5jqNjnE-pE:t463": [
+   "functional_dependency",
+   "third_normal_form"
+  ],
+  "video_K5jqNjnE-pE:t523": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "video_K5jqNjnE-pE:t602": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "video_K5jqNjnE-pE:t671": [
+   "fourth_normal_form",
+   "lossless_decomposition"
+  ],
+  "video_K5jqNjnE-pE:t753": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "video_K5jqNjnE-pE:t818": [
+   "lossless_decomposition"
+  ],
+  "video_K5jqNjnE-pE:t898": [
+   "lossless_decomposition"
+  ],
+  "video_K5jqNjnE-pE:t945": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_K5jqNjnE-pE:t1004": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "video_K5jqNjnE-pE:t1074": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_K5jqNjnE-pE:t1120": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_K5jqNjnE-pE:t1169": [
+   "functional_dependency",
+   "third_normal_form"
+  ],
+  "video_K5jqNjnE-pE:t1228": [
+   "dependency_preservation",
+   "fourth_normal_form"
+  ],
+  "video_K5jqNjnE-pE:t1279": [
+   "functional_dependency"
+  ],
+  "video_K5jqNjnE-pE:t1353": [
+   "functional_dependency"
+  ],
+  "video_K5jqNjnE-pE:t1431": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "video_K5jqNjnE-pE:t1500": [
+   "functional_dependency",
+   "third_normal_form"
+  ],
+  "video_K5jqNjnE-pE:t1577": [
+   "functional_dependency"
+  ],
+  "video_K5jqNjnE-pE:t1652": [
+   "functional_dependency"
+  ],
+  "video_K5jqNjnE-pE:t1725": [
+   "functional_dependency"
+  ],
+  "video_K5jqNjnE-pE:t1774": [
+   "functional_dependency"
+  ],
+  "video_K5jqNjnE-pE:t1857": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "video_9-uqoJK6KPc:t12": [
+   "functional_dependency",
+   "third_normal_form"
+  ],
+  "video_9-uqoJK6KPc:t58": [
+   "third_normal_form",
+   "boyce_codd_normal_form"
+  ],
+  "video_9-uqoJK6KPc:t136": [
+   "fourth_normal_form",
+   "boyce_codd_normal_form"
+  ],
+  "video_9-uqoJK6KPc:t189": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "video_9-uqoJK6KPc:t255": [
+   "functional_dependency",
+   "third_normal_form"
+  ],
+  "video_9-uqoJK6KPc:t306": [
+   "fourth_normal_form",
+   "dependency_preservation"
+  ],
+  "video_9-uqoJK6KPc:t352": [
+   "fourth_normal_form",
+   "functional_dependency"
+  ],
+  "video_9-uqoJK6KPc:t432": [
+   "dependency_preservation"
+  ],
+  "video_9-uqoJK6KPc:t513": [
+   "third_normal_form",
+   "boyce_codd_normal_form"
+  ],
+  "video_9-uqoJK6KPc:t593": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_9-uqoJK6KPc:t672": [
+   "fourth_normal_form",
+   "lossless_decomposition"
+  ],
+  "video_9-uqoJK6KPc:t728": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "video_9-uqoJK6KPc:t777": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "video_9-uqoJK6KPc:t852": [
+   "lossless_decomposition",
+   "fourth_normal_form"
+  ],
+  "video_9-uqoJK6KPc:t905": [
+   "dependency_preservation",
+   "third_normal_form"
+  ],
+  "video_9-uqoJK6KPc:t957": [
+   "functional_dependency"
+  ],
+  "video_9-uqoJK6KPc:t1035": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "video_9-uqoJK6KPc:t1082": [
+   "functional_dependency",
+   "attribute_closure"
+  ],
+  "video_9-uqoJK6KPc:t1163": [
+   "functional_dependency",
+   "attribute_closure"
+  ],
+  "video_9-uqoJK6KPc:t1229": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "video_9-uqoJK6KPc:t1293": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "video_9-uqoJK6KPc:t1369": [
+   "functional_dependency"
+  ],
+  "video_9-uqoJK6KPc:t1422": [
+   "attribute_closure"
+  ],
+  "video_9-uqoJK6KPc:t1498": [
+   "attribute_closure",
+   "functional_dependency"
+  ],
+  "video_9-uqoJK6KPc:t1575": [
+   "attribute_closure"
+  ],
+  "video_9-uqoJK6KPc:t1648": [
+   "attribute_closure",
+   "functional_dependency"
+  ],
+  "video_9-uqoJK6KPc:t1695": [
+   "attribute_closure",
+   "functional_dependency"
+  ],
+  "video_9-uqoJK6KPc:t1755": [
+   "functional_dependency",
+   "attribute_closure"
+  ],
+  "video_9-uqoJK6KPc:t1833": [
+   "attribute_closure"
+  ],
+  "video_vdd-fDCypTc:t12": [
+   "dependency_preservation",
+   "functional_dependency"
+  ],
+  "video_vdd-fDCypTc:t62": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "video_vdd-fDCypTc:t130": [
+   "attribute_closure",
+   "functional_dependency"
+  ],
+  "video_vdd-fDCypTc:t206": [
+   "functional_dependency",
+   "attribute_closure"
+  ],
+  "video_vdd-fDCypTc:t258": [
+   "functional_dependency"
+  ],
+  "video_vdd-fDCypTc:t310": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "video_vdd-fDCypTc:t389": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "video_vdd-fDCypTc:t438": [
+   "functional_dependency",
+   "attribute_closure"
+  ],
+  "video_vdd-fDCypTc:t513": [
+   "functional_dependency"
+  ],
+  "video_vdd-fDCypTc:t564": [
+   "functional_dependency"
+  ],
+  "video_vdd-fDCypTc:t640": [
+   "functional_dependency"
+  ],
+  "video_vdd-fDCypTc:t704": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "video_vdd-fDCypTc:t782": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "video_vdd-fDCypTc:t851": [
+   "functional_dependency",
+   "attribute_closure"
+  ],
+  "video_vdd-fDCypTc:t904": [
+   "third_normal_form"
+  ],
+  "video_vdd-fDCypTc:t960": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "video_vdd-fDCypTc:t1008": [
+   "lossless_decomposition"
+  ],
+  "video_vdd-fDCypTc:t1068": [
+   "functional_dependency",
+   "lossless_decomposition"
+  ],
+  "video_vdd-fDCypTc:t1144": [
+   "lossless_decomposition",
+   "functional_dependency"
+  ],
+  "video_vdd-fDCypTc:t1223": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "video_vdd-fDCypTc:t1275": [
+   "lossless_decomposition",
+   "third_normal_form"
+  ],
+  "video_vdd-fDCypTc:t1352": [
+   "functional_dependency",
+   "fourth_normal_form"
+  ],
+  "video_vdd-fDCypTc:t1409": [
+   "lossless_decomposition",
+   "dependency_preservation"
+  ],
+  "video_vdd-fDCypTc:t1468": [
+   "dependency_preservation",
+   "lossless_decomposition"
+  ],
+  "video_vdd-fDCypTc:t1515": [
+   "dependency_preservation"
+  ],
+  "video_vdd-fDCypTc:t1594": [
+   "dependency_preservation"
+  ],
+  "video_vdd-fDCypTc:t1655": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "video_vdd-fDCypTc:t1733": [
+   "dependency_preservation",
+   "functional_dependency"
+  ],
+  "video_vdd-fDCypTc:t1812": [
+   "dependency_preservation"
+  ],
+  "video_vdd-fDCypTc:t1862": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "video_vdd-fDCypTc:t1941": [
+   "functional_dependency"
+  ],
+  "video_vdd-fDCypTc:t2020": [
+   "dependency_preservation"
+  ],
+  "video_EnTIVJi4bW4:t22": [
+   "fourth_normal_form",
+   "dependency_preservation"
+  ],
+  "video_EnTIVJi4bW4:t76": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t134": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t212": [
+   "functional_dependency",
+   "fourth_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t285": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t362": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "video_EnTIVJi4bW4:t426": [
+   "lossless_decomposition",
+   "dependency_preservation"
+  ],
+  "video_EnTIVJi4bW4:t473": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t551": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t602": [
+   "third_normal_form",
+   "functional_dependency"
+  ],
+  "video_EnTIVJi4bW4:t677": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t745": [
+   "third_normal_form",
+   "functional_dependency"
+  ],
+  "video_EnTIVJi4bW4:t823": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t901": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t965": [
+   "third_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t1024": [
+   "third_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t1079": [
+   "functional_dependency",
+   "third_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t1131": [
+   "functional_dependency",
+   "third_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t1186": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t1241": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t1299": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t1369": [
+   "third_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t1433": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t1494": [
+   "dependency_preservation",
+   "fourth_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t1564": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t1637": [
+   "boyce_codd_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t1689": [
+   "third_normal_form",
+   "boyce_codd_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t1767": [
+   "fourth_normal_form",
+   "boyce_codd_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t1814": [
+   "dependency_preservation",
+   "fourth_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t1864": [
+   "fourth_normal_form",
+   "dependency_preservation"
+  ],
+  "video_EnTIVJi4bW4:t1929": [
+   "boyce_codd_normal_form",
+   "third_normal_form"
+  ],
+  "video_EnTIVJi4bW4:t1988": [
+   "third_normal_form",
+   "boyce_codd_normal_form"
+  ],
+  "video_qz0bimEpdQo:t10": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "video_qz0bimEpdQo:t58": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "video_qz0bimEpdQo:t138": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "video_qz0bimEpdQo:t220": [
+   "multivalued_dependency",
+   "functional_dependency"
+  ],
+  "video_qz0bimEpdQo:t302": [
+   "multivalued_dependency",
+   "functional_dependency"
+  ],
+  "video_qz0bimEpdQo:t359": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_qz0bimEpdQo:t408": [
+   "functional_dependency",
+   "multivalued_dependency"
+  ],
+  "video_qz0bimEpdQo:t471": [
+   "multivalued_dependency",
+   "fourth_normal_form"
+  ],
+  "video_qz0bimEpdQo:t549": [
+   "functional_dependency",
+   "third_normal_form"
+  ],
+  "video_qz0bimEpdQo:t624": [
+   "functional_dependency",
+   "third_normal_form"
+  ],
+  "video_qz0bimEpdQo:t674": [
+   "functional_dependency"
+  ],
+  "video_qz0bimEpdQo:t725": [
+   "functional_dependency",
+   "multivalued_dependency"
+  ],
+  "video_qz0bimEpdQo:t803": [
+   "multivalued_dependency",
+   "functional_dependency"
+  ],
+  "video_qz0bimEpdQo:t880": [
+   "multivalued_dependency",
+   "functional_dependency"
+  ],
+  "video_qz0bimEpdQo:t941": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "video_qz0bimEpdQo:t1009": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "video_qz0bimEpdQo:t1088": [
+   "fourth_normal_form"
+  ],
+  "video_qz0bimEpdQo:t1151": [
+   "fourth_normal_form"
+  ],
+  "video_qz0bimEpdQo:t1200": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "video_qz0bimEpdQo:t1256": [
+   "fourth_normal_form",
+   "third_normal_form"
+  ],
+  "video_qz0bimEpdQo:t1334": [
+   "multivalued_dependency",
+   "fourth_normal_form"
+  ],
+  "video_qz0bimEpdQo:t1416": [
+   "fourth_normal_form"
+  ],
+  "video_qz0bimEpdQo:t1483": [
+   "fourth_normal_form"
+  ],
+  "video_qz0bimEpdQo:t1528": [
+   "functional_dependency",
+   "dependency_preservation"
+  ],
+  "video_qz0bimEpdQo:t1589": [
+   "fourth_normal_form",
+   "boyce_codd_normal_form"
+  ],
+  "video_qz0bimEpdQo:t1664": [
+   "third_normal_form",
+   "fourth_normal_form"
+  ],
+  "video_qz0bimEpdQo:t1710": [
+   "third_normal_form",
+   "functional_dependency"
+  ],
+  "video_qz0bimEpdQo:t1775": [
+   "third_normal_form",
+   "functional_dependency"
+  ],
+  "video_qz0bimEpdQo:t1824": [
+   "functional_dependency",
+   "fourth_normal_form"
+  ],
+  "video_qz0bimEpdQo:t1900": [
+   "functional_dependency"
+  ],
+  "video_qz0bimEpdQo:t1978": [
+   "functional_dependency",
+   "attribute_closure"
+  ],
+  "video_qz0bimEpdQo:t2030": [
+   "attribute_closure",
+   "functional_dependency"
+  ],
+  "video_qz0bimEpdQo:t2076": [
+   "multivalued_dependency",
+   "functional_dependency"
+  ],
+  "video_qz0bimEpdQo:t2132": [
+   "functional_dependency",
+   "fourth_normal_form"
+  ],
+  "video_qz0bimEpdQo:t2177": [
+   "fourth_normal_form",
+   "multivalued_dependency"
+  ]
+ }
+}

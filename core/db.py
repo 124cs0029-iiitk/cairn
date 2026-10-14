@@ -1,4 +1,4 @@
-"""SQLite schema and helpers for learners, questions, attempts and mastery."""
+"""SQLite schema and helpers for learners, mastery, attempts and tutor-chat evidence."""
 from __future__ import annotations
 
 import sqlite3
@@ -16,34 +16,22 @@ CREATE TABLE IF NOT EXISTS learners (
     created_at  REAL NOT NULL
 );
 
--- One row per learner and concept: current belief that the concept is known.
+-- One row per learner and concept: the current belief that the concept is known.
 CREATE TABLE IF NOT EXISTS mastery (
     learner_id     TEXT NOT NULL REFERENCES learners(id),
     concept_id     TEXT NOT NULL,
     p_known        REAL NOT NULL,
     n_obs          INTEGER NOT NULL DEFAULT 0,
-    half_life_days REAL NOT NULL DEFAULT 2.0,   -- forgetting-curve half-life
-    updated_at     REAL NOT NULL,
+    half_life_days REAL NOT NULL DEFAULT 1.5,   -- forgetting-curve half-life
+    updated_at     REAL NOT NULL,               -- when the concept was last practised
     PRIMARY KEY (learner_id, concept_id)
 );
 
--- Verified questions. payload is the full question JSON (stem, options, key, explanation).
-CREATE TABLE IF NOT EXISTS questions (
-    id          TEXT PRIMARY KEY,
-    concept_id  TEXT NOT NULL,
-    chunk_id    TEXT NOT NULL,
-    qtype       TEXT NOT NULL CHECK (qtype IN ('mcq','short','numeric')),
-    difficulty  INTEGER NOT NULL CHECK (difficulty BETWEEN 1 AND 5),
-    payload     TEXT NOT NULL,
-    embedding   BLOB,                            -- for novelty checks
-    verified    INTEGER NOT NULL DEFAULT 0,
-    created_at  REAL NOT NULL
-);
-
+-- Every answered question (the questions themselves live in data/kb/questions.json).
 CREATE TABLE IF NOT EXISTS attempts (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
     learner_id  TEXT NOT NULL REFERENCES learners(id),
-    question_id TEXT NOT NULL REFERENCES questions(id),
+    question_id TEXT NOT NULL,
     concept_id  TEXT NOT NULL,
     correct     INTEGER NOT NULL,
     response    TEXT,
@@ -52,7 +40,29 @@ CREATE TABLE IF NOT EXISTS attempts (
 );
 CREATE INDEX IF NOT EXISTS idx_attempts_learner ON attempts(learner_id, ts);
 
--- Weak evidence from tutor conversations (question asked, concept touched).
+-- One row per quiz sitting; question_ids is the ordered list of questions in it (JSON).
+CREATE TABLE IF NOT EXISTS quizzes (
+    id           TEXT PRIMARY KEY,
+    learner_id   TEXT NOT NULL REFERENCES learners(id),
+    mode         TEXT NOT NULL,
+    created_at   REAL NOT NULL,
+    finished_at  REAL,
+    question_ids TEXT NOT NULL
+);
+
+-- The answer given to each question of a quiz (a skipped question has no row), for the review screen.
+CREATE TABLE IF NOT EXISTS quiz_answers (
+    quiz_id     TEXT NOT NULL REFERENCES quizzes(id),
+    position    INTEGER NOT NULL,
+    question_id TEXT NOT NULL,
+    response    TEXT,
+    correct     INTEGER NOT NULL,
+    feedback    TEXT NOT NULL DEFAULT '',
+    answered_at REAL NOT NULL,
+    PRIMARY KEY (quiz_id, position)
+);
+
+-- Weak evidence from tutor conversations (a question asked about a concept).
 CREATE TABLE IF NOT EXISTS chat_events (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
     learner_id  TEXT NOT NULL REFERENCES learners(id),
