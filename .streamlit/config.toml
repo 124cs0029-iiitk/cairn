@@ -1,0 +1,18 @@
+[server]
+headless = true
+enableStaticServing = true
+# Spaces serves the app inside an iframe behind a proxy; XSRF and CORS checks
+# break file uploads there.
+enableXsrfProtection = false
+enableCORS = false
+maxUploadSize = 50
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+primaryColor = "#1F6F6B"
+backgroundColor = "#FAFBFA"
+secondaryBackgroundColor = "#EAF0EF"
+textColor = "#17202A"
+font = "sans serif"

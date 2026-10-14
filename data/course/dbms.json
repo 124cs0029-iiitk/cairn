@@ -1,0 +1,198 @@
+{
+  "course": "dbms",
+  "title": "Database Management Systems",
+  "groups": [
+    {
+      "id": "intro",
+      "title": "Introduction to databases"
+    },
+    {
+      "id": "relational",
+      "title": "The relational model"
+    },
+    {
+      "id": "sql",
+      "title": "SQL"
+    },
+    {
+      "id": "er",
+      "title": "Entity-Relationship model"
+    },
+    {
+      "id": "normalization",
+      "title": "Normalization"
+    }
+  ],
+  "sources": [
+    {
+      "id": "textbook",
+      "title": "Database Design (Watt and Eng)",
+      "modality": "pdf",
+      "static_path": "courses/dbms/DBMS_Textbook.pdf",
+      "group": null
+    },
+    {
+      "id": "slides_ch1",
+      "title": "Slides: Introduction",
+      "modality": "slides",
+      "static_path": "courses/dbms/ch1.pdf",
+      "group": "intro"
+    },
+    {
+      "id": "slides_ch2",
+      "title": "Slides: Relational Model",
+      "modality": "slides",
+      "static_path": "courses/dbms/ch2.pdf",
+      "group": "relational"
+    },
+    {
+      "id": "slides_ch3",
+      "title": "Slides: Introduction to SQL",
+      "modality": "slides",
+      "static_path": "courses/dbms/ch3.pdf",
+      "group": "sql"
+    },
+    {
+      "id": "slides_ch6",
+      "title": "Slides: E-R Model",
+      "modality": "slides",
+      "static_path": "courses/dbms/ch6.pdf",
+      "group": "er"
+    },
+    {
+      "id": "slides_ch7",
+      "title": "Slides: Normalization",
+      "modality": "slides",
+      "static_path": "courses/dbms/ch7.pdf",
+      "group": "normalization"
+    },
+    {
+      "id": "video_OWX4RvijwLw",
+      "title": "NPTEL: Introduction to DBMS 1",
+      "modality": "video",
+      "youtube_id": "OWX4RvijwLw",
+      "playlist_index": 3,
+      "group": "intro"
+    },
+    {
+      "id": "video_rrG7azSlyWI",
+      "title": "NPTEL: Introduction to DBMS 2",
+      "modality": "video",
+      "youtube_id": "rrG7azSlyWI",
+      "playlist_index": 4,
+      "group": "intro"
+    },
+    {
+      "id": "video_DRSog3SA4-Y",
+      "title": "NPTEL: Introduction to Relational Model 1",
+      "modality": "video",
+      "youtube_id": "DRSog3SA4-Y",
+      "playlist_index": 5,
+      "group": "relational"
+    },
+    {
+      "id": "video_UodHyVywy5c",
+      "title": "NPTEL: Introduction to Relational Model 2",
+      "modality": "video",
+      "youtube_id": "UodHyVywy5c",
+      "playlist_index": 46,
+      "group": "relational"
+    },
+    {
+      "id": "video_iHrvzgQxybY",
+      "title": "NPTEL: Formal Relational Query Languages",
+      "modality": "video",
+      "youtube_id": "iHrvzgQxybY",
+      "playlist_index": 11,
+      "group": "relational"
+    },
+    {
+      "id": "video_w1XdPholzWY",
+      "title": "NPTEL: Introduction to SQL 1",
+      "modality": "video",
+      "youtube_id": "w1XdPholzWY",
+      "playlist_index": 6,
+      "group": "sql"
+    },
+    {
+      "id": "video_ywUn5qNmxNo",
+      "title": "NPTEL: Introduction to SQL 2",
+      "modality": "video",
+      "youtube_id": "ywUn5qNmxNo",
+      "playlist_index": 7,
+      "group": "sql"
+    },
+    {
+      "id": "video_fsDBUDKC_iM",
+      "title": "NPTEL: Introduction to SQL 3",
+      "modality": "video",
+      "youtube_id": "fsDBUDKC_iM",
+      "playlist_index": 8,
+      "group": "sql"
+    },
+    {
+      "id": "video_cx7rBTS2dBM",
+      "title": "NPTEL: Entity-Relationship Model 1",
+      "modality": "video",
+      "youtube_id": "cx7rBTS2dBM",
+      "playlist_index": 12,
+      "group": "er"
+    },
+    {
+      "id": "video_pm_Tr3eZAac",
+      "title": "NPTEL: Entity-Relationship Model 2",
+      "modality": "video",
+      "youtube_id": "pm_Tr3eZAac",
+      "playlist_index": 13,
+      "group": "er"
+    },
+    {
+      "id": "video_LMAELfNAGF4",
+      "title": "NPTEL: Entity-Relationship Model 3",
+      "modality": "video",
+      "youtube_id": "LMAELfNAGF4",
+      "playlist_index": 14,
+      "group": "er"
+    },
+    {
+      "id": "video_K5jqNjnE-pE",
+      "title": "NPTEL: Relational Database Design 1",
+      "modality": "video",
+      "youtube_id": "K5jqNjnE-pE",
+      "playlist_index": 16,
+      "group": "normalization"
+    },
+    {
+      "id": "video_9-uqoJK6KPc",
+      "title": "NPTEL: Relational Database Design 2",
+      "modality": "video",
+      "youtube_id": "9-uqoJK6KPc",
+      "playlist_index": 17,
+      "group": "normalization"
+    },
+    {
+      "id": "video_vdd-fDCypTc",
+      "title": "NPTEL: Relational Database Design 3",
+      "modality": "video",
+      "youtube_id": "vdd-fDCypTc",
+      "playlist_index": 18,
+      "group": "normalization"
+    },
+    {
+      "id": "video_EnTIVJi4bW4",
+      "title": "NPTEL: Relational Database Design 4",
+      "modality": "video",
+      "youtube_id": "EnTIVJi4bW4",
+      "playlist_index": 19,
+      "group": "normalization"
+    },
+    {
+      "id": "video_qz0bimEpdQo",
+      "title": "NPTEL: Relational Database Design 5",
+      "modality": "video",
+      "youtube_id": "qz0bimEpdQo",
+      "playlist_index": 20,
+      "group": "normalization"
+    }
+  ]
+}

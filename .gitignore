@@ -1,0 +1,16 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/runtime/*
+!data/runtime/.gitkeep
+data/raw/
+
+# Only the slide chapters the course uses are published
+static/courses/dbms/ch*.pdf
+!static/courses/dbms/ch1.pdf
+!static/courses/dbms/ch2.pdf
+!static/courses/dbms/ch3.pdf
+!static/courses/dbms/ch6.pdf
+!static/courses/dbms/ch7.pdf
